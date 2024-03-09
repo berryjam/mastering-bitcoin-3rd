@@ -7,6 +7,10 @@ coverY: 0
 
 <figure><img src=".gitbook/assets/colophon.png" alt=""><figcaption><p>精通比特币第三版封面</p></figcaption></figure>
 
+## 精通比特币第三版翻译
+
+[https://berryjam.gitbook.io/mastering-bitcoin-3rd](https://berryjam.gitbook.io/mastering-bitcoin-3rd)
+
 ## 译者介绍
 
 区块链领域从业者
