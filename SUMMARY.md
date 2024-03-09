@@ -27,7 +27,15 @@
 
 * [综合介绍](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/zong-he-jie-shao.md)
 * [比特币概述](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/bi-te-bi-gai-shu.md)
-* [Inputs](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/inputs.md)
+* [从在线商店购买](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/cong-zai-xian-shang-dian-gou-mai.md)
+* [比特币交易](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/bi-te-bi-jiao-yi/README.md)
+  * [交易输入和输出](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/bi-te-bi-jiao-yi/jiao-yi-shu-ru-he-shu-chu.md)
+  * [交易链](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/bi-te-bi-jiao-yi/jiao-yi-lian.md)
+  * [找零](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/bi-te-bi-jiao-yi/zhao-ling.md)
+  * [币种选择](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/bi-te-bi-jiao-yi/bi-zhong-xuan-ze.md)
+  * [常见的交易形式](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/bi-te-bi-jiao-yi/chang-jian-de-jiao-yi-xing-shi.md)
+* [构建交易](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/gou-jian-jiao-yi/README.md)
+  * [获取正确的输入](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/gou-jian-jiao-yi/huo-qu-zheng-que-de-shu-ru.md)
 
 ## 第三章. Bitcoin Core:参考实现
 
