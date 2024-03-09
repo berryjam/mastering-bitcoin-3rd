@@ -57,6 +57,16 @@
   * [探索和解码交易](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bi-te-bi-he-xin-api/tan-suo-he-jie-ma-jiao-yi.md)
   * [探索区块](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bi-te-bi-he-xin-api/tan-suo-qu-kuai.md)
   * [使用比特币核心的编程接口](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bi-te-bi-he-xin-api/shi-yong-bi-te-bi-he-xin-de-bian-cheng-jie-kou.md)
+* [不同语言客户端、库和工具包](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bu-tong-yu-yan-ke-hu-duan-ku-he-gong-ju-bao/README.md)
+  * [C/C++](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bu-tong-yu-yan-ke-hu-duan-ku-he-gong-ju-bao/c-c++.md)
+  * [JavaScript](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bu-tong-yu-yan-ke-hu-duan-ku-he-gong-ju-bao/javascript.md)
+  * [Java](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bu-tong-yu-yan-ke-hu-duan-ku-he-gong-ju-bao/java.md)
+  * [Python](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bu-tong-yu-yan-ke-hu-duan-ku-he-gong-ju-bao/python.md)
+  * [Go](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bu-tong-yu-yan-ke-hu-duan-ku-he-gong-ju-bao/go.md)
+  * [Rust](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bu-tong-yu-yan-ke-hu-duan-ku-he-gong-ju-bao/rust.md)
+  * [Scala](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bu-tong-yu-yan-ke-hu-duan-ku-he-gong-ju-bao/scala.md)
+  * [C#](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bu-tong-yu-yan-ke-hu-duan-ku-he-gong-ju-bao/c.md)
+  * [总结](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bu-tong-yu-yan-ke-hu-duan-ku-he-gong-ju-bao/zong-jie.md)
 
 ## 第四章. 密钥和地址
 
