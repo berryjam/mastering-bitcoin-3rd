@@ -22,12 +22,11 @@
   * [获取你的第一枚比特币](di-yi-zhang-.-jie-shao/kai-shi-shi-yong-bi-te-bi/huo-qu-ni-de-di-yi-mei-bi-te-bi.md)
   * [获取比特币现货价格](di-yi-zhang-.-jie-shao/kai-shi-shi-yong-bi-te-bi/huo-qu-bi-te-bi-xian-huo-jia-ge.md)
   * [发送和接收比特币](di-yi-zhang-.-jie-shao/kai-shi-shi-yong-bi-te-bi/fa-song-he-jie-shou-bi-te-bi.md)
-* [Imagery](di-yi-zhang-.-jie-shao/imagery.md)
 
 ## 第二章. 比特币是怎么运作的
 
-* [Icons](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/icons.md)
-* [Buttons](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/buttons.md)
+* [综合介绍](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/zong-he-jie-shao.md)
+* [比特币概述](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/bi-te-bi-gai-shu.md)
 * [Inputs](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/inputs.md)
 
 ## 第三章. Bitcoin Core:参考实现
