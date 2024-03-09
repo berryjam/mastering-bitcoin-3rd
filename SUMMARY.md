@@ -36,6 +36,10 @@
   * [常见的交易形式](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/bi-te-bi-jiao-yi/chang-jian-de-jiao-yi-xing-shi.md)
 * [构建交易](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/gou-jian-jiao-yi/README.md)
   * [获取正确的输入](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/gou-jian-jiao-yi/huo-qu-zheng-que-de-shu-ru.md)
+  * [创建输出](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/gou-jian-jiao-yi/chuang-jian-shu-chu.md)
+  * [将交易添加到区块链中](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/gou-jian-jiao-yi/jiang-jiao-yi-tian-jia-dao-qu-kuai-lian-zhong.md)
+* [比特币挖矿](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/bi-te-bi-wa-kuang.md)
+* [花费交易](di-er-zhang-.-bi-te-bi-shi-zen-mo-yun-zuo-de/hua-fei-jiao-yi.md)
 
 ## 第三章. Bitcoin Core:参考实现
 
