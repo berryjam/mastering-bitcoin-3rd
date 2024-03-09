@@ -6,7 +6,7 @@
 
 * [写作比特币书籍](xu-yan/xie-zuo-bi-te-bi-shu-ji.md)
 * [目标读者](xu-yan/mu-biao-du-zhe.md)
-* [封面为什么有虫子？](xu-yan/feng-mian-wei-shi-mo-you-chong-zi.md)
+* [为什么使用叶切蚂作为封面](xu-yan/wei-shi-mo-shi-yong-ye-qie-ma-zuo-wei-feng-mian.md)
 * [自上一版以来的变化](xu-yan/zi-shang-yi-ban-yi-lai-de-bian-hua.md)
 
 ## 第一章. 介绍
