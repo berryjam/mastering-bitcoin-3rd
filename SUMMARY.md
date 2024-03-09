@@ -43,9 +43,20 @@
 
 ## 第三章. Bitcoin Core:参考实现
 
-* [Icons](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/icons.md)
-* [Buttons](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/buttons.md)
-* [Inputs](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/inputs.md)
+* [综合介绍](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/zong-he-jie-shao.md)
+* [从比特币到比特币核心](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/cong-bi-te-bi-dao-bi-te-bi-he-xin.md)
+* [比特币开发环境](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bi-te-bi-kai-fa-huan-jing.md)
+* [编译比特币核心的源代码](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bian-yi-bi-te-bi-he-xin-de-yuan-dai-ma/README.md)
+  * [选择比特币核心版本](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bian-yi-bi-te-bi-he-xin-de-yuan-dai-ma/xuan-ze-bi-te-bi-he-xin-ban-ben.md)
+  * [配置比特币核心构建](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bian-yi-bi-te-bi-he-xin-de-yuan-dai-ma/pei-zhi-bi-te-bi-he-xin-gou-jian.md)
+  * [构建比特币核心可执行文件](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bian-yi-bi-te-bi-he-xin-de-yuan-dai-ma/gou-jian-bi-te-bi-he-xin-ke-zhi-hang-wen-jian.md)
+* [运行比特币核心节点](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/yun-hang-bi-te-bi-he-xin-jie-dian.md)
+* [配置比特币核心节点](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/pei-zhi-bi-te-bi-he-xin-jie-dian.md)
+* [比特币核心 API](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bi-te-bi-he-xin-api/README.md)
+  * [获取比特币核心状态信息](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bi-te-bi-he-xin-api/huo-qu-bi-te-bi-he-xin-zhuang-tai-xin-xi.md)
+  * [探索和解码交易](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bi-te-bi-he-xin-api/tan-suo-he-jie-ma-jiao-yi.md)
+  * [探索区块](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bi-te-bi-he-xin-api/tan-suo-qu-kuai.md)
+  * [使用比特币核心的编程接口](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bi-te-bi-he-xin-api/shi-yong-bi-te-bi-he-xin-de-bian-cheng-jie-kou.md)
 
 ## 第四章. 密钥和地址
 
