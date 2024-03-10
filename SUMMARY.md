@@ -75,8 +75,12 @@
   * [私钥](di-si-zhang-.-mi-yue-he-di-zhi/gong-yue-mi-ma-xue/si-yue.md)
   * [椭圆曲线密码学解释](di-si-zhang-.-mi-yue-he-di-zhi/gong-yue-mi-ma-xue/tuo-yuan-qu-xian-mi-ma-xue-jie-shi.md)
   * [公钥](di-si-zhang-.-mi-yue-he-di-zhi/gong-yue-mi-ma-xue/gong-yue.md)
-* [Inputs](di-si-zhang-.-mi-yue-he-di-zhi/inputs.md)
-* [Page 1](di-si-zhang-.-mi-yue-he-di-zhi/page-1.md)
+* [输出和输入脚本](di-si-zhang-.-mi-yue-he-di-zhi/shu-chu-he-shu-ru-jiao-ben.md)
+* [IP 地址：比特币的原始地址（P2PK）](di-si-zhang-.-mi-yue-he-di-zhi/ip-di-zhi-bi-te-bi-de-yuan-shi-di-zhi-p2pk.md)
+* [历史遗留地址P2PKH](di-si-zhang-.-mi-yue-he-di-zhi/li-shi-yi-liu-di-zhi-p2pkh.md)
+* [Base58check编码](di-si-zhang-.-mi-yue-he-di-zhi/base58check-bian-ma.md)
+* [压缩公钥](di-si-zhang-.-mi-yue-he-di-zhi/ya-suo-gong-yue.md)
+* [历史遗留的支付到脚本哈希地址（P2SH）](di-si-zhang-.-mi-yue-he-di-zhi/li-shi-yi-liu-de-zhi-fu-dao-jiao-ben-ha-xi-di-zhi-p2sh.md)
 
 ## 第五章. 钱包恢复
 
