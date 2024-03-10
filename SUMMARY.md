@@ -92,8 +92,12 @@
 
 ## 第五章. 钱包恢复
 
-* [Icons](di-wu-zhang-.-qian-bao-hui-fu/icons.md)
-* [Buttons](di-wu-zhang-.-qian-bao-hui-fu/buttons.md)
+* [综合介绍](di-wu-zhang-.-qian-bao-hui-fu/zong-he-jie-shao.md)
+* [独立密钥生成](di-wu-zhang-.-qian-bao-hui-fu/du-li-mi-yue-sheng-cheng/README.md)
+  * [确定性密钥生成](di-wu-zhang-.-qian-bao-hui-fu/du-li-mi-yue-sheng-cheng/que-ding-xing-mi-yue-sheng-cheng.md)
+  * [子公钥派生](di-wu-zhang-.-qian-bao-hui-fu/du-li-mi-yue-sheng-cheng/zi-gong-yue-pai-sheng.md)
+  * [分层确定性(HD)密钥生成(BIP32)](di-wu-zhang-.-qian-bao-hui-fu/du-li-mi-yue-sheng-cheng/fen-ceng-que-ding-xing-hd-mi-yue-sheng-cheng-bip32.md)
+  * [种子和恢复码](di-wu-zhang-.-qian-bao-hui-fu/du-li-mi-yue-sheng-cheng/zhong-zi-he-hui-fu-ma.md)
 * [Inputs](di-wu-zhang-.-qian-bao-hui-fu/inputs.md)
 
 ## 第六章. 交易
