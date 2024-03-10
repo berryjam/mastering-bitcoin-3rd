@@ -70,9 +70,13 @@
 
 ## 第四章. 密钥和地址
 
-* [Icons](di-si-zhang-.-mi-yue-he-di-zhi/icons.md)
-* [Buttons](di-si-zhang-.-mi-yue-he-di-zhi/buttons.md)
+* [综合介绍](di-si-zhang-.-mi-yue-he-di-zhi/zong-he-jie-shao.md)
+* [公钥密码学](di-si-zhang-.-mi-yue-he-di-zhi/gong-yue-mi-ma-xue/README.md)
+  * [私钥](di-si-zhang-.-mi-yue-he-di-zhi/gong-yue-mi-ma-xue/si-yue.md)
+  * [椭圆曲线密码学解释](di-si-zhang-.-mi-yue-he-di-zhi/gong-yue-mi-ma-xue/tuo-yuan-qu-xian-mi-ma-xue-jie-shi.md)
+  * [公钥](di-si-zhang-.-mi-yue-he-di-zhi/gong-yue-mi-ma-xue/gong-yue.md)
 * [Inputs](di-si-zhang-.-mi-yue-he-di-zhi/inputs.md)
+* [Page 1](di-si-zhang-.-mi-yue-he-di-zhi/page-1.md)
 
 ## 第五章. 钱包恢复
 
