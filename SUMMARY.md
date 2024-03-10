@@ -75,12 +75,20 @@
   * [私钥](di-si-zhang-.-mi-yue-he-di-zhi/gong-yue-mi-ma-xue/si-yue.md)
   * [椭圆曲线密码学解释](di-si-zhang-.-mi-yue-he-di-zhi/gong-yue-mi-ma-xue/tuo-yuan-qu-xian-mi-ma-xue-jie-shi.md)
   * [公钥](di-si-zhang-.-mi-yue-he-di-zhi/gong-yue-mi-ma-xue/gong-yue.md)
-* [输出和输入脚本](di-si-zhang-.-mi-yue-he-di-zhi/shu-chu-he-shu-ru-jiao-ben.md)
-* [IP 地址：比特币的原始地址（P2PK）](di-si-zhang-.-mi-yue-he-di-zhi/ip-di-zhi-bi-te-bi-de-yuan-shi-di-zhi-p2pk.md)
+* [输出和输入脚本](di-si-zhang-.-mi-yue-he-di-zhi/inputs.md)
+* [IP 地址：比特币的原始地址（P2PK）](di-si-zhang-.-mi-yue-he-di-zhi/page-1.md)
 * [历史遗留地址P2PKH](di-si-zhang-.-mi-yue-he-di-zhi/li-shi-yi-liu-di-zhi-p2pkh.md)
 * [Base58check编码](di-si-zhang-.-mi-yue-he-di-zhi/base58check-bian-ma.md)
 * [压缩公钥](di-si-zhang-.-mi-yue-he-di-zhi/ya-suo-gong-yue.md)
 * [历史遗留的支付到脚本哈希地址（P2SH）](di-si-zhang-.-mi-yue-he-di-zhi/li-shi-yi-liu-de-zhi-fu-dao-jiao-ben-ha-xi-di-zhi-p2sh.md)
+* [Bech32地址](di-si-zhang-.-mi-yue-he-di-zhi/bech32-di-zhi/README.md)
+  * [Bech32地址所存在的问题](di-si-zhang-.-mi-yue-he-di-zhi/bech32-di-zhi/bech32-di-zhi-suo-cun-zai-de-wen-ti.md)
+  * [Bech32m](di-si-zhang-.-mi-yue-he-di-zhi/bech32-di-zhi/bech32m.md)
+  * [私钥格式](di-si-zhang-.-mi-yue-he-di-zhi/bech32-di-zhi/si-yue-ge-shi.md)
+  * [压缩私钥](di-si-zhang-.-mi-yue-he-di-zhi/bech32-di-zhi/ya-suo-si-yue.md)
+* [高级密钥和地址](di-si-zhang-.-mi-yue-he-di-zhi/gao-ji-mi-yue-he-di-zhi/README.md)
+  * [自定义地址](di-si-zhang-.-mi-yue-he-di-zhi/gao-ji-mi-yue-he-di-zhi/zi-ding-yi-di-zhi.md)
+  * [纸钱包](di-si-zhang-.-mi-yue-he-di-zhi/gao-ji-mi-yue-he-di-zhi/zhi-qian-bao.md)
 
 ## 第五章. 钱包恢复
 
