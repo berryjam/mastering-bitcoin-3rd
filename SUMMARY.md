@@ -104,6 +104,7 @@
   * [简介](di-wu-zhang-.-qian-bao-hui-fu/qian-bao-ji-shu-zhan-de-xiang-xi-jie-shao/jian-jie.md)
   * [BIP39恢复码](di-wu-zhang-.-qian-bao-hui-fu/qian-bao-ji-shu-zhan-de-xiang-xi-jie-shao/bip39-hui-fu-ma.md)
   * [从种子创建HD钱包](di-wu-zhang-.-qian-bao-hui-fu/qian-bao-ji-shu-zhan-de-xiang-xi-jie-shao/cong-zhong-zi-chuang-jian-hd-qian-bao.md)
+  * [在网络商店使用扩展公钥](di-wu-zhang-.-qian-bao-hui-fu/qian-bao-ji-shu-zhan-de-xiang-xi-jie-shao/zai-wang-luo-shang-dian-shi-yong-kuo-zhan-gong-yue.md)
 
 ## 第六章. 交易
 
