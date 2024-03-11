@@ -126,6 +126,7 @@
   * [第三方交易篡改](di-liu-zhang-.-jiao-yi/jian-zheng-jie-gou-witness-structure/di-san-fang-jiao-yi-cuan-gai.md)
   * [第二方交易篡改](di-liu-zhang-.-jiao-yi/jian-zheng-jie-gou-witness-structure/di-er-fang-jiao-yi-cuan-gai.md)
   * [隔离见证](di-liu-zhang-.-jiao-yi/jian-zheng-jie-gou-witness-structure/ge-li-jian-zheng.md)
+  * [见证结构序列化](di-liu-zhang-.-jiao-yi/jian-zheng-jie-gou-witness-structure/jian-zheng-jie-gou-xu-lie-hua.md)
 
 ## 第七章. 授权与验证
 
