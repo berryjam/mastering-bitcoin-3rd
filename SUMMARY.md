@@ -121,6 +121,11 @@
   * [交易输出列表长度字段](di-liu-zhang-.-jiao-yi/shu-chu/jiao-yi-shu-chu-lie-biao-chang-du-zi-duan.md)
   * [转出数量字段](di-liu-zhang-.-jiao-yi/shu-chu/zhuan-chu-shu-liang-zi-duan.md)
   * [输出脚本](di-liu-zhang-.-jiao-yi/shu-chu/shu-chu-jiao-ben.md)
+* [见证结构(Witness Structure)](di-liu-zhang-.-jiao-yi/jian-zheng-jie-gou-witness-structure/README.md)
+  * [循环依赖](di-liu-zhang-.-jiao-yi/jian-zheng-jie-gou-witness-structure/xun-huan-yi-lai.md)
+  * [第三方交易篡改](di-liu-zhang-.-jiao-yi/jian-zheng-jie-gou-witness-structure/di-san-fang-jiao-yi-cuan-gai.md)
+  * [第二方交易篡改](di-liu-zhang-.-jiao-yi/jian-zheng-jie-gou-witness-structure/di-er-fang-jiao-yi-cuan-gai.md)
+  * [隔离见证](di-liu-zhang-.-jiao-yi/jian-zheng-jie-gou-witness-structure/ge-li-jian-zheng.md)
 
 ## 第七章. 授权与验证
 
