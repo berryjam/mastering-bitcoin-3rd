@@ -113,11 +113,14 @@
 * [版本](di-liu-zhang-.-jiao-yi/ban-ben.md)
 * [扩展Marker和Flag字段](di-liu-zhang-.-jiao-yi/kuo-zhan-marker-he-flag-zi-duan.md)
 * [输入](di-liu-zhang-.-jiao-yi/shu-ru/README.md)
-  * [介绍](di-liu-zhang-.-jiao-yi/shu-ru/jie-shao.md)
   * [交易输入列表长度字段](di-liu-zhang-.-jiao-yi/shu-ru/jiao-yi-shu-ru-lie-biao-chang-du-zi-duan.md)
   * [Outpoint字段](di-liu-zhang-.-jiao-yi/shu-ru/outpoint-zi-duan.md)
   * [输入脚本字段](di-liu-zhang-.-jiao-yi/shu-ru/shu-ru-jiao-ben-zi-duan.md)
   * [序列号字段](di-liu-zhang-.-jiao-yi/shu-ru/xu-lie-hao-zi-duan.md)
+* [输出](di-liu-zhang-.-jiao-yi/shu-chu/README.md)
+  * [交易输出列表长度字段](di-liu-zhang-.-jiao-yi/shu-chu/jiao-yi-shu-chu-lie-biao-chang-du-zi-duan.md)
+  * [转出数量字段](di-liu-zhang-.-jiao-yi/shu-chu/zhuan-chu-shu-liang-zi-duan.md)
+  * [输出脚本](di-liu-zhang-.-jiao-yi/shu-chu/shu-chu-jiao-ben.md)
 
 ## 第七章. 授权与验证
 
