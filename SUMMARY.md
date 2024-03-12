@@ -142,7 +142,13 @@
   * [支付至公钥哈希（P2PKH）](di-qi-zhang-.-shou-quan-he-ren-zheng/jiao-yi-jiao-ben-he-jiao-ben-yu-yan/zhi-fu-zhi-gong-yue-ha-xi-p2pkh.md)
 * [脚本化的多重签名](di-qi-zhang-.-shou-quan-he-ren-zheng/jiao-ben-hua-de-duo-zhong-qian-ming/README.md)
   * [CHECKMULTISIG执行中的一些怪异情况](di-qi-zhang-.-shou-quan-he-ren-zheng/jiao-ben-hua-de-duo-zhong-qian-ming/checkmultisig-zhi-hang-zhong-de-yi-xie-guai-yi-qing-kuang.md)
-* [支付到脚本哈希（Pay to Script Hash，P2SH）](di-qi-zhang-.-shou-quan-he-ren-zheng/zhi-fu-dao-jiao-ben-ha-xi-pay-to-script-hashp2sh.md)
+* [支付到脚本哈希（Pay to Script Hash，P2SH）](di-qi-zhang-.-shou-quan-he-ren-zheng/zhi-fu-dao-jiao-ben-ha-xi-pay-to-script-hashp2sh/README.md)
+  * [P2SH地址](di-qi-zhang-.-shou-quan-he-ren-zheng/zhi-fu-dao-jiao-ben-ha-xi-pay-to-script-hashp2sh/p2sh-di-zhi.md)
+  * [P2SH的优点](di-qi-zhang-.-shou-quan-he-ren-zheng/zhi-fu-dao-jiao-ben-ha-xi-pay-to-script-hashp2sh/p2sh-de-you-dian.md)
+  * [赎回脚本和验证](di-qi-zhang-.-shou-quan-he-ren-zheng/zhi-fu-dao-jiao-ben-ha-xi-pay-to-script-hashp2sh/shu-hui-jiao-ben-he-yan-zheng.md)
+* [数据记录输出（OP\_RETURN）](di-qi-zhang-.-shou-quan-he-ren-zheng/shu-ju-ji-lu-shu-chu-opreturn/README.md)
+  * [交易锁定时间的限制](di-qi-zhang-.-shou-quan-he-ren-zheng/shu-ju-ji-lu-shu-chu-opreturn/jiao-yi-suo-ding-shi-jian-de-xian-zhi.md)
+  * [检查锁定时间验证（OP\_CLTV）](di-qi-zhang-.-shou-quan-he-ren-zheng/shu-ju-ji-lu-shu-chu-opreturn/jian-cha-suo-ding-shi-jian-yan-zheng-opcltv.md)
 
 ## 第八章. 数字签名
 
