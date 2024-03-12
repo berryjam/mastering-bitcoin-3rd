@@ -142,6 +142,7 @@
   * [支付至公钥哈希（P2PKH）](di-qi-zhang-.-shou-quan-he-ren-zheng/jiao-yi-jiao-ben-he-jiao-ben-yu-yan/zhi-fu-zhi-gong-yue-ha-xi-p2pkh.md)
 * [脚本化的多重签名](di-qi-zhang-.-shou-quan-he-ren-zheng/jiao-ben-hua-de-duo-zhong-qian-ming/README.md)
   * [CHECKMULTISIG执行中的一些怪异情况](di-qi-zhang-.-shou-quan-he-ren-zheng/jiao-ben-hua-de-duo-zhong-qian-ming/checkmultisig-zhi-hang-zhong-de-yi-xie-guai-yi-qing-kuang.md)
+* [支付到脚本哈希（Pay to Script Hash，P2SH）](di-qi-zhang-.-shou-quan-he-ren-zheng/zhi-fu-dao-jiao-ben-ha-xi-pay-to-script-hashp2sh.md)
 
 ## 第八章. 数字签名
 
