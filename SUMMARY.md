@@ -140,7 +140,7 @@
   * [无状态验证](di-qi-zhang-.-shou-quan-he-ren-zheng/jiao-yi-jiao-ben-he-jiao-ben-yu-yan/wu-zhuang-tai-yan-zheng.md)
   * [脚本构建](di-qi-zhang-.-shou-quan-he-ren-zheng/jiao-yi-jiao-ben-he-jiao-ben-yu-yan/jiao-ben-gou-jian.md)
   * [支付至公钥哈希（P2PKH）](di-qi-zhang-.-shou-quan-he-ren-zheng/jiao-yi-jiao-ben-he-jiao-ben-yu-yan/zhi-fu-zhi-gong-yue-ha-xi-p2pkh.md)
-* [Inputs](di-qi-zhang-.-shou-quan-he-ren-zheng/inputs.md)
+* [脚本化的多重签名](di-qi-zhang-.-shou-quan-he-ren-zheng/jiao-ben-hua-de-duo-zhong-qian-ming.md)
 
 ## 第八章. 数字签名
 
