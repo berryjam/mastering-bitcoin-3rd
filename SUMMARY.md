@@ -127,6 +127,10 @@
   * [第二方交易篡改](di-liu-zhang-.-jiao-yi/jian-zheng-jie-gou-witness-structure/di-er-fang-jiao-yi-cuan-gai.md)
   * [隔离见证](di-liu-zhang-.-jiao-yi/jian-zheng-jie-gou-witness-structure/ge-li-jian-zheng.md)
   * [见证结构序列化](di-liu-zhang-.-jiao-yi/jian-zheng-jie-gou-witness-structure/jian-zheng-jie-gou-xu-lie-hua.md)
+* [锁定时间](di-liu-zhang-.-jiao-yi/suo-ding-shi-jian.md)
+* [Coinbase交易](di-liu-zhang-.-jiao-yi/coinbase-jiao-yi.md)
+* [权重和V字节(Vbytes)](di-liu-zhang-.-jiao-yi/quan-zhong-hevzi-jie-vbytes.md)
+* [历史遗留序列化](di-liu-zhang-.-jiao-yi/li-shi-yi-liu-xu-lie-hua.md)
 
 ## 第七章. 授权与验证
 
