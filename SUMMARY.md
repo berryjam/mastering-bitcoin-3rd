@@ -132,11 +132,15 @@
 * [权重和V字节(Vbytes)](di-liu-zhang-.-jiao-yi/quan-zhong-hevzi-jie-vbytes.md)
 * [历史遗留序列化](di-liu-zhang-.-jiao-yi/li-shi-yi-liu-xu-lie-hua.md)
 
-## 第七章. 授权与验证
+## 第七章. 授权和认证
 
-* [Icons](di-qi-zhang-.-shou-quan-yu-yan-zheng/icons.md)
-* [Buttons](di-qi-zhang-.-shou-quan-yu-yan-zheng/buttons.md)
-* [Inputs](di-qi-zhang-.-shou-quan-yu-yan-zheng/inputs.md)
+* [综合介绍](di-qi-zhang-.-shou-quan-he-ren-zheng/zong-he-jie-shao.md)
+* [交易脚本和脚本语言](di-qi-zhang-.-shou-quan-he-ren-zheng/jiao-yi-jiao-ben-he-jiao-ben-yu-yan/README.md)
+  * [图灵不完备](di-qi-zhang-.-shou-quan-he-ren-zheng/jiao-yi-jiao-ben-he-jiao-ben-yu-yan/tu-ling-bu-wan-bei.md)
+  * [无状态验证](di-qi-zhang-.-shou-quan-he-ren-zheng/jiao-yi-jiao-ben-he-jiao-ben-yu-yan/wu-zhuang-tai-yan-zheng.md)
+  * [脚本构建](di-qi-zhang-.-shou-quan-he-ren-zheng/jiao-yi-jiao-ben-he-jiao-ben-yu-yan/jiao-ben-gou-jian.md)
+  * [支付至公钥哈希（P2PKH）](di-qi-zhang-.-shou-quan-he-ren-zheng/jiao-yi-jiao-ben-he-jiao-ben-yu-yan/zhi-fu-zhi-gong-yue-ha-xi-p2pkh.md)
+* [Inputs](di-qi-zhang-.-shou-quan-he-ren-zheng/inputs.md)
 
 ## 第八章. 数字签名
 
