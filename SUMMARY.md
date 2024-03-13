@@ -160,6 +160,8 @@
 * [默克尔替代脚本树(MAST)](di-qi-zhang-.-shou-quan-he-ren-zheng/mo-ke-er-ti-dai-jiao-ben-shu-mast.md)
 * [支付到合约（P2C）](di-qi-zhang-.-shou-quan-he-ren-zheng/zhi-fu-dao-he-yue-p2c.md)
 * [脚本化多重签名和门限签名](di-qi-zhang-.-shou-quan-he-ren-zheng/jiao-ben-hua-duo-zhong-qian-ming-he-men-xian-qian-ming.md)
+* [Taproot](di-qi-zhang-.-shou-quan-he-ren-zheng/taproot.md)
+* [Tapscript](di-qi-zhang-.-shou-quan-he-ren-zheng/tapscript.md)
 
 ## 第八章. 数字签名
 
