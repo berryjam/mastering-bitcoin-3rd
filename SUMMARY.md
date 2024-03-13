@@ -173,6 +173,12 @@
 * [施乃尔(Schnorr)签名](di-ba-zhang-.-shu-zi-qian-ming/shi-nai-er-schnorr-qian-ming/README.md)
   * [Schnorr签名序列化](di-ba-zhang-.-shu-zi-qian-ming/shi-nai-er-schnorr-qian-ming/schnorr-qian-ming-xu-lie-hua.md)
   * [基于Schnorr的无脚本多重签名](di-ba-zhang-.-shu-zi-qian-ming/shi-nai-er-schnorr-qian-ming/ji-yu-schnorr-de-wu-jiao-ben-duo-zhong-qian-ming.md)
+  * [基于Schnorr的无脚本门限签名](di-ba-zhang-.-shu-zi-qian-ming/shi-nai-er-schnorr-qian-ming/ji-yu-schnorr-de-wu-jiao-ben-men-xian-qian-ming.md)
+* [ECDSA签名](di-ba-zhang-.-shu-zi-qian-ming/ecdsa-qian-ming/README.md)
+  * [ECDSA算法](di-ba-zhang-.-shu-zi-qian-ming/ecdsa-qian-ming/ecdsa-suan-fa.md)
+  * [ECDSA签名序列化(DER)](di-ba-zhang-.-shu-zi-qian-ming/ecdsa-qian-ming/ecdsa-qian-ming-xu-lie-hua-der.md)
+* [在签名中随机性的重要性](di-ba-zhang-.-shu-zi-qian-ming/zai-qian-ming-zhong-sui-ji-xing-de-zhong-yao-xing.md)
+* [隔离见证的新签名算法](di-ba-zhang-.-shu-zi-qian-ming/ge-li-jian-zheng-de-xin-qian-ming-suan-fa.md)
 
 ## 第九章. 交易手续费
 
