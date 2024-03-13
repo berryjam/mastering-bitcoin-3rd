@@ -157,6 +157,8 @@
 * [复杂脚本示例](di-qi-zhang-.-shou-quan-he-ren-zheng/fu-za-jiao-ben-shi-li/README.md)
   * [隔离见证输出和交易示例](di-qi-zhang-.-shou-quan-he-ren-zheng/fu-za-jiao-ben-shi-li/ge-li-jian-zheng-shu-chu-he-jiao-yi-shi-li.md)
   * [升级到隔离见证](di-qi-zhang-.-shou-quan-he-ren-zheng/fu-za-jiao-ben-shi-li/sheng-ji-dao-ge-li-jian-zheng.md)
+* [默克尔替代脚本树(MAST)](di-qi-zhang-.-shou-quan-he-ren-zheng/mo-ke-er-ti-dai-jiao-ben-shu-mast.md)
+* [支付到合约（P2C）](di-qi-zhang-.-shou-quan-he-ren-zheng/zhi-fu-dao-he-yue-p2c.md)
 
 ## 第八章. 数字签名
 
