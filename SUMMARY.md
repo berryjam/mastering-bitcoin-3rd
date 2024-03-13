@@ -165,9 +165,13 @@
 
 ## 第八章. 数字签名
 
-* [Icons](di-ba-zhang-.-shu-zi-qian-ming/icons.md)
-* [Buttons](di-ba-zhang-.-shu-zi-qian-ming/buttons.md)
-* [Inputs](di-ba-zhang-.-shu-zi-qian-ming/inputs.md)
+* [综合介绍](di-ba-zhang-.-shu-zi-qian-ming/zong-he-jie-shao.md)
+* [数字签名的工作原理](di-ba-zhang-.-shu-zi-qian-ming/shu-zi-qian-ming-de-gong-zuo-yuan-li/README.md)
+  * [生成数字签名](di-ba-zhang-.-shu-zi-qian-ming/shu-zi-qian-ming-de-gong-zuo-yuan-li/sheng-cheng-shu-zi-qian-ming.md)
+  * [验证签名](di-ba-zhang-.-shu-zi-qian-ming/shu-zi-qian-ming-de-gong-zuo-yuan-li/yan-zheng-qian-ming.md)
+  * [签名哈希类型（SIGHASH）](di-ba-zhang-.-shu-zi-qian-ming/shu-zi-qian-ming-de-gong-zuo-yuan-li/qian-ming-ha-xi-lei-xing-sighash.md)
+* [施乃尔(Schnorr)签名](di-ba-zhang-.-shu-zi-qian-ming/shi-nai-er-schnorr-qian-ming/README.md)
+  * [Schnorr签名序列化](di-ba-zhang-.-shu-zi-qian-ming/shi-nai-er-schnorr-qian-ming/schnorr-qian-ming-xu-lie-hua.md)
 
 ## 第九章. 交易手续费
 
