@@ -172,6 +172,7 @@
   * [签名哈希类型（SIGHASH）](di-ba-zhang-.-shu-zi-qian-ming/shu-zi-qian-ming-de-gong-zuo-yuan-li/qian-ming-ha-xi-lei-xing-sighash.md)
 * [施乃尔(Schnorr)签名](di-ba-zhang-.-shu-zi-qian-ming/shi-nai-er-schnorr-qian-ming/README.md)
   * [Schnorr签名序列化](di-ba-zhang-.-shu-zi-qian-ming/shi-nai-er-schnorr-qian-ming/schnorr-qian-ming-xu-lie-hua.md)
+  * [基于Schnorr的无脚本多重签名](di-ba-zhang-.-shu-zi-qian-ming/shi-nai-er-schnorr-qian-ming/ji-yu-schnorr-de-wu-jiao-ben-duo-zhong-qian-ming.md)
 
 ## 第九章. 交易手续费
 
