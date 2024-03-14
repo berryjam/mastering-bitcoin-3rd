@@ -182,9 +182,16 @@
 
 ## 第九章. 交易手续费
 
-* [Icons](di-jiu-zhang-.-jiao-yi-shou-xu-fei/icons.md)
-* [Buttons](di-jiu-zhang-.-jiao-yi-shou-xu-fei/buttons.md)
-* [Inputs](di-jiu-zhang-.-jiao-yi-shou-xu-fei/inputs.md)
+* [综合介绍](di-jiu-zhang-.-jiao-yi-shou-xu-fei/zong-he-jie-shao.md)
+* [谁支付交易费用？](di-jiu-zhang-.-jiao-yi-shou-xu-fei/shui-zhi-fu-jiao-yi-fei-yong.md)
+* [手续费和费率](di-jiu-zhang-.-jiao-yi-shou-xu-fei/shou-xu-fei-he-fei-shuai.md)
+* [确定合适的费率估算](di-jiu-zhang-.-jiao-yi-shou-xu-fei/que-ding-he-shi-de-fei-shuai-gu-suan.md)
+* [替换交易（RBF）费率提升](di-jiu-zhang-.-jiao-yi-shou-xu-fei/ti-huan-jiao-yi-rbf-fei-shuai-ti-sheng.md)
+* [子支付父（Child Pays for Parent，CPFP）费率调整](di-jiu-zhang-.-jiao-yi-shou-xu-fei/zi-zhi-fu-fu-child-pays-for-parentcpfp-fei-shuai-tiao-zheng.md)
+* [交易包中继](di-jiu-zhang-.-jiao-yi-shou-xu-fei/jiao-yi-bao-zhong-ji.md)
+* [交易固定](di-jiu-zhang-.-jiao-yi-shou-xu-fei/jiao-yi-gu-ding.md)
+* [CPFP削减和锚定输出](di-jiu-zhang-.-jiao-yi-shou-xu-fei/cpfp-xiao-jian-he-mao-ding-shu-chu.md)
+* [将费用添加到交易中](di-jiu-zhang-.-jiao-yi-shou-xu-fei/jiang-fei-yong-tian-jia-dao-jiao-yi-zhong.md)
 
 ## 第十章. 比特币网络
 
