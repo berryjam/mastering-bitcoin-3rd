@@ -199,7 +199,7 @@
 * [综合介绍](di-shi-zhang-.-bi-te-bi-wang-luo/zong-he-jie-shao.md)
 * [网络](di-shi-zhang-.-bi-te-bi-wang-luo/wang-luo.md)
 * [紧凑块传输](di-shi-zhang-.-bi-te-bi-wang-luo/jin-cou-kuai-chuan-shu.md)
-* [私有区块传输网络](di-shi-zhang-.-bi-te-bi-wang-luo/si-you-qu-kuai-chuan-shu-wang-luo.md)
+* [私有区块传输网络](di-shi-zhang-.-bi-te-bi-wang-luo/page-1.md)
 * [网络发现](di-shi-zhang-.-bi-te-bi-wang-luo/wang-luo-fa-xian.md)
 * [全节点](di-shi-zhang-.-bi-te-bi-wang-luo/quan-jie-dian.md)
 * [交换“存货”](di-shi-zhang-.-bi-te-bi-wang-luo/jiao-huan-cun-huo.md)
@@ -207,6 +207,15 @@
 * [布隆过滤器](di-shi-zhang-.-bi-te-bi-wang-luo/bu-long-guo-lv-qi/README.md)
   * [布隆过滤器工作原理](di-shi-zhang-.-bi-te-bi-wang-luo/bu-long-guo-lv-qi/bu-long-guo-lv-qi-gong-zuo-yuan-li.md)
   * [轻量级客户端如何使用布隆过滤器](di-shi-zhang-.-bi-te-bi-wang-luo/bu-long-guo-lv-qi/qing-liang-ji-ke-hu-duan-ru-he-shi-yong-bu-long-guo-lv-qi.md)
+* [紧凑块过滤器](di-shi-zhang-.-bi-te-bi-wang-luo/jin-cou-kuai-guo-lv-qi/README.md)
+  * [Golomb-Rice编码集（GCS）](di-shi-zhang-.-bi-te-bi-wang-luo/jin-cou-kuai-guo-lv-qi/golombrice-bian-ma-ji-gcs.md)
+  * [要包含在区块过滤器中的数据](di-shi-zhang-.-bi-te-bi-wang-luo/jin-cou-kuai-guo-lv-qi/yao-bao-han-zai-qu-kuai-guo-lv-qi-zhong-de-shu-ju.md)
+  * [从多个对等方下载区块过滤器](di-shi-zhang-.-bi-te-bi-wang-luo/jin-cou-kuai-guo-lv-qi/cong-duo-ge-dui-deng-fang-xia-zai-qu-kuai-guo-lv-qi.md)
+  * [使用有损编码来减少带宽](di-shi-zhang-.-bi-te-bi-wang-luo/jin-cou-kuai-guo-lv-qi/shi-yong-you-sun-bian-ma-lai-jian-shao-dai-kuan.md)
+  * [使用紧凑块过滤器](di-shi-zhang-.-bi-te-bi-wang-luo/jin-cou-kuai-guo-lv-qi/shi-yong-jin-cou-kuai-guo-lv-qi.md)
+* [轻量级客户端与隐私](di-shi-zhang-.-bi-te-bi-wang-luo/qing-liang-ji-ke-hu-duan-yu-yin-si.md)
+* [加密和认证连接](di-shi-zhang-.-bi-te-bi-wang-luo/jia-mi-he-ren-zheng-lian-jie.md)
+* [内存池和孤立池](di-shi-zhang-.-bi-te-bi-wang-luo/nei-cun-chi-he-gu-li-chi.md)
 
 ## 第十一章. 区块链
 
