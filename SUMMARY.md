@@ -235,9 +235,32 @@
 
 ## 第十二章. 挖矿和共识算法
 
-* [Icons](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/icons.md)
-* [Buttons](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/buttons.md)
-* [Inputs](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/inputs.md)
+* [综合介绍](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/zong-he-jie-shao.md)
+* [比特币经济学与货币创造](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/bi-te-bi-jing-ji-xue-yu-huo-bi-chuang-zao.md)
+* [去中心化共识](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/qu-zhong-xin-hua-gong-shi.md)
+* [交易的独立验证](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/jiao-yi-de-du-li-yan-zheng.md)
+* [挖矿节点](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-kuang-jie-dian/README.md)
+  * [Coinbase交易](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-kuang-jie-dian/coinbase-jiao-yi.md)
+  * [Coinbase奖励和交易费](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-kuang-jie-dian/coinbase-jiang-li-he-jiao-yi-fei.md)
+  * [Coinbase 交易的结构](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-kuang-jie-dian/coinbase-jiao-yi-de-jie-gou.md)
+  * [Coinbase数据](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-kuang-jie-dian/coinbase-shu-ju.md)
+* [构建区块头](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/gou-jian-qu-kuai-tou.md)
+* [挖掘区块](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-jue-qu-kuai/README.md)
+  * [工作量证明算法(PoW)](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-jue-qu-kuai/gong-zuo-liang-zheng-ming-suan-fa-pow.md)
+  * [目标表示](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-jue-qu-kuai/mu-biao-biao-shi.md)
+  * [调整难度的重新定位](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-jue-qu-kuai/tiao-zheng-nan-du-de-zhong-xin-ding-wei.md)
+* [中位时间过去（Median-Time-Past, MPT）](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/zhong-wei-shi-jian-guo-qu-mediantimepast-mpt.md)
+* [成功挖掘区块](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/cheng-gong-wa-jue-qu-kuai.md)
+* [验证新区块](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/yan-zheng-xin-qu-kuai.md)
+* [组装和选择区块链](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/zu-zhuang-he-xuan-ze-qu-kuai-lian.md)
+* [挖矿和哈希彩票](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-kuang-he-ha-xi-cai-piao/README.md)
+  * [额外的Nonce解决方案](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-kuang-he-ha-xi-cai-piao/e-wai-de-nonce-jie-jue-fang-an.md)
+  * [挖矿池](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-kuang-he-ha-xi-cai-piao/wa-kuang-chi.md)
+* [哈希攻击](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/ha-xi-gong-ji.md)
+* [改变共识规则](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/gai-bian-gong-shi-gui-ze/README.md)
+  * [硬分叉](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/gai-bian-gong-shi-gui-ze/ying-fen-cha.md)
+  * [软分叉](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/gai-bian-gong-shi-gui-ze/ruan-fen-cha.md)
+  * [共识软件开发](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/gai-bian-gong-shi-gui-ze/gong-shi-ruan-jian-kai-fa.md)
 
 ## 第十三章. 比特币安全
 
