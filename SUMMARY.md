@@ -219,9 +219,9 @@
 
 ## 第十一章. 区块链
 
-* [综合介绍](di-shi-yi-zhang-.-qu-kuai-lian/zong-he-jie-shao.md)
-* [Buttons](di-shi-yi-zhang-.-qu-kuai-lian/buttons.md)
-* [Inputs](di-shi-yi-zhang-.-qu-kuai-lian/inputs.md)
+* [综合介绍](di-shi-yi-zhang-.-qu-kuai-lian/icons.md)
+* [区块的结构](di-shi-yi-zhang-.-qu-kuai-lian/qu-kuai-de-jie-gou.md)
+* [区块头](di-shi-yi-zhang-.-qu-kuai-lian/qu-kuai-tou.md)
 
 ## 第十二章. 挖矿和共识算法
 
