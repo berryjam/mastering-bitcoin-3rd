@@ -6,7 +6,7 @@
 
 * [写作比特币书籍](xu-yan/xie-zuo-bi-te-bi-shu-ji.md)
 * [目标读者](xu-yan/mu-biao-du-zhe.md)
-* [为什么使用叶切蚂作为封面](xu-yan/wei-shi-mo-shi-yong-ye-qie-ma-zuo-wei-feng-mian.md)
+* [为什么使用叶切蚁作为封面](xu-yan/wei-shi-mo-shi-yong-ye-qie-yi-zuo-wei-feng-mian.md)
 * [自上一版以来的变化](xu-yan/zi-shang-yi-ban-yi-lai-de-bian-hua.md)
 
 ## 第一章. 介绍
@@ -67,6 +67,7 @@
   * [Scala](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bu-tong-yu-yan-ke-hu-duan-ku-he-gong-ju-bao/scala.md)
   * [C#](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bu-tong-yu-yan-ke-hu-duan-ku-he-gong-ju-bao/c.md)
   * [总结](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bu-tong-yu-yan-ke-hu-duan-ku-he-gong-ju-bao/zong-jie.md)
+* [简单的应用开发：使用bitcoinj客户端监听转账，和发起转账](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/jian-dan-de-ying-yong-kai-fa-shi-yong-bitcoinj-ke-hu-duan-jian-ting-zhuan-zhang-he-fa-qi-zhuan-zhang.md)
 
 ## 第四章. 密钥和地址
 
