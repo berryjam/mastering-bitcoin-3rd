@@ -174,7 +174,7 @@ public CoinSelection select(Coin target, List<TransactionOutput> candidates) {
     }
 ```
 
-等待一段时间后，重新转账0.00001 BTC，可以看到输出：
+等待一段时间交易得到确认后，重新转账0.00001 BTC，再次触发转账交易，可以看到输出：
 
 <pre><code><strong>coins sent. transaction hash: 910e4fa1e07a192a33986dc45c6857ff33391cabe0ff87e733fda7ea0f71379e
 </strong>-----> confidence changed: 4618ab0373121312f95bab45ae408e8c5d87acd63262adb17f7af93609c9fb0c
