@@ -278,9 +278,19 @@
 
 ## 第十四章. 二层应用
 
-* [Icons](di-shi-si-zhang-.-er-ceng-ying-yong/icons.md)
-* [Buttons](di-shi-si-zhang-.-er-ceng-ying-yong/buttons.md)
-* [Inputs](di-shi-si-zhang-.-er-ceng-ying-yong/inputs.md)
+* [综合介绍](di-shi-si-zhang-.-er-ceng-ying-yong/zong-he-jie-shao.md)
+* [构建块（原语）](di-shi-si-zhang-.-er-ceng-ying-yong/gou-jian-kuai-yuan-yu.md)
+* [基于构建块的应用程序](di-shi-si-zhang-.-er-ceng-ying-yong/ji-yu-gou-jian-kuai-de-ying-yong-cheng-xu.md)
+* [彩色币](di-shi-si-zhang-.-er-ceng-ying-yong/cai-se-bi/README.md)
+  * [一次性密封](di-shi-si-zhang-.-er-ceng-ying-yong/cai-se-bi/yi-ci-xing-mi-feng.md)
+  * [“支付给合约”（Pay to Contract，P2C）](di-shi-si-zhang-.-er-ceng-ying-yong/cai-se-bi/zhi-fu-gei-he-yue-pay-to-contractp2c.md)
+  * [客户端验证](di-shi-si-zhang-.-er-ceng-ying-yong/cai-se-bi/ke-hu-duan-yan-zheng.md)
+  * [RGB](di-shi-si-zhang-.-er-ceng-ying-yong/cai-se-bi/rgb.md)
+  * [Taproot资产](di-shi-si-zhang-.-er-ceng-ying-yong/cai-se-bi/taproot-zi-chan.md)
+* [支付通道和状态通道](di-shi-si-zhang-.-er-ceng-ying-yong/zhi-fu-tong-dao-he-zhuang-tai-tong-dao/README.md)
+  * [状态通道 - 基本概念和术语](di-shi-si-zhang-.-er-ceng-ying-yong/zhi-fu-tong-dao-he-zhuang-tai-tong-dao/zhuang-tai-tong-dao-ji-ben-gai-nian-he-shu-yu.md)
+  * [简单支付通道示例](di-shi-si-zhang-.-er-ceng-ying-yong/zhi-fu-tong-dao-he-zhuang-tai-tong-dao/jian-dan-zhi-fu-tong-dao-shi-li.md)
+  * [创建无需信任的通道](di-shi-si-zhang-.-er-ceng-ying-yong/zhi-fu-tong-dao-he-zhuang-tai-tong-dao/chuang-jian-wu-xu-xin-ren-de-tong-dao.md)
 
 ## 附录A. 比特币白皮书（by中本聪）
 
