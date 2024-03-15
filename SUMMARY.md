@@ -264,9 +264,17 @@
 
 ## 第十三章. 比特币安全
 
-* [Icons](di-shi-san-zhang-.-bi-te-bi-an-quan/icons.md)
-* [Buttons](di-shi-san-zhang-.-bi-te-bi-an-quan/buttons.md)
-* [Inputs](di-shi-san-zhang-.-bi-te-bi-an-quan/inputs.md)
+* [综合介绍](di-shi-san-zhang-.-bi-te-bi-an-quan/zong-he-jie-shao.md)
+* [安全原则](di-shi-san-zhang-.-bi-te-bi-an-quan/an-quan-yuan-ze/README.md)
+  * [安全地开发比特币系统](di-shi-san-zhang-.-bi-te-bi-an-quan/an-quan-yuan-ze/an-quan-di-kai-fa-bi-te-bi-xi-tong.md)
+  * ["信任之根"](di-shi-san-zhang-.-bi-te-bi-an-quan/an-quan-yuan-ze/xin-ren-zhi-gen.md)
+* [用户安全最佳实践](di-shi-san-zhang-.-bi-te-bi-an-quan/yong-hu-an-quan-zui-jia-shi-jian/README.md)
+  * [比特币的物理存储](di-shi-san-zhang-.-bi-te-bi-an-quan/yong-hu-an-quan-zui-jia-shi-jian/bi-te-bi-de-wu-li-cun-chu.md)
+  * [硬件签名设备](di-shi-san-zhang-.-bi-te-bi-an-quan/yong-hu-an-quan-zui-jia-shi-jian/ying-jian-qian-ming-she-bei.md)
+  * [确保您的访问权限](di-shi-san-zhang-.-bi-te-bi-an-quan/yong-hu-an-quan-zui-jia-shi-jian/que-bao-nin-de-fang-wen-quan-xian.md)
+  * [分散风险](di-shi-san-zhang-.-bi-te-bi-an-quan/yong-hu-an-quan-zui-jia-shi-jian/fen-san-feng-xian.md)
+  * [多签和治理](di-shi-san-zhang-.-bi-te-bi-an-quan/yong-hu-an-quan-zui-jia-shi-jian/duo-qian-he-zhi-li.md)
+  * [生存能力](di-shi-san-zhang-.-bi-te-bi-an-quan/yong-hu-an-quan-zui-jia-shi-jian/sheng-cun-neng-li.md)
 
 ## 第十四章. 二层应用
 
