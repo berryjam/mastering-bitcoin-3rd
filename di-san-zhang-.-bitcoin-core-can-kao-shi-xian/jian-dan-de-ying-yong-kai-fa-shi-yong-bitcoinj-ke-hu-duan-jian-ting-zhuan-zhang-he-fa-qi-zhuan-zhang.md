@@ -27,7 +27,7 @@
 
 ```
 $git clone git@github.com:berryjam/bitcoinj.git
-$cd bitcoinj
+$cd bitcoinj/examples
 ```
 
 **本地生成钱包和监听转账：**
@@ -182,9 +182,123 @@ new block depth: 0
 -----> coins resceived: 910e4fa1e07a192a33986dc45c6857ff33391cabe0ff87e733fda7ea0f71379e
 </code></pre>
 
-
+可以在区块链浏览器上看到交易信息：[https://mempool.space/zh/testnet/tx/910e4fa1e07a192a33986dc45c6857ff33391cabe0ff87e733fda7ea0f71379e](https://mempool.space/zh/testnet/tx/910e4fa1e07a192a33986dc45c6857ff33391cabe0ff87e733fda7ea0f71379e)。
 
 ## 拉块
 
+最后是一个简单的监控转账的小功能，比如我们需求是需要监听链上所有交易信息，然后对感兴趣的地址转账再做一些后处理。
 
+<figure><img src="../.gitbook/assets/3.6.png" alt=""><figcaption><p>图 3-6. 交易所在块信息</p></figcaption></figure>
 
+### 1.获取对应的交易信息
+
+遍历块的所有交易信息，通过交易hash筛选出转账交易。
+
+```
+        for (Transaction tx : txs) {
+            if ("910e4fa1e07a192a33986dc45c6857ff33391cabe0ff87e733fda7ea0f71379e".equals(tx.getTxId().toString())) {
+                System.out.println("tx: " + tx);
+                ...
+            }
+        }
+```
+
+### 2.获取输入地址
+
+观察交易的输入信息，可以看到witness和地址类型信息(这里为P2WPKH)，但是从witness怎么获取到发送方地址呢？
+
+<figure><img src="../.gitbook/assets/3.7.png" alt=""><figcaption><p>图 3-7. 交易输入信息</p></figcaption></figure>
+
+我们可以通过Transaction.java的函数了解到input的witness是怎么构造出来的。
+
+```
+public TransactionInput addSignedInput(TransactionOutPoint prevOut, Script scriptPubKey, Coin amount, ECKey sigKey,
+                                           SigHash sigHash, boolean anyoneCanPay) throws ScriptException {
+        ...
+        if (ScriptPattern.isP2PK(scriptPubKey)) {
+            ...
+        } else if (ScriptPattern.isP2PKH(scriptPubKey)) {
+            ...
+        } else if (ScriptPattern.isP2WPKH(scriptPubKey)) { // 示例为P2WPKH
+            Script scriptCode = ScriptBuilder.createP2PKHOutputScript(sigKey);
+            TransactionSignature signature = calculateWitnessSignature(inputIndex, sigKey, scriptCode, input.getValue(),
+                    sigHash, anyoneCanPay);
+            input.setScriptSig(ScriptBuilder.createEmpty());
+            input.setWitness(TransactionWitness.redeemP2WPKH(signature, sigKey));
+        } else {
+            throw new ScriptException(ScriptError.SCRIPT_ERR_UNKNOWN_ERROR, "Don't know how to sign for this kind of scriptPubKey: " + scriptPubKey);
+        }
+        return input;
+    }
+```
+
+可以看到通过TransactionWitness.redeemP2WPKH(signature, sigKey)构造出来witness，其中包含了sigKey，继续深入redeemP2WPKH函数就可以知道这个参数就是发送方的PubKey，并且放在witness的第二个位置（下标为0）。
+
+```
+    public static TransactionWitness redeemP2WPKH(@Nullable TransactionSignature signature, ECKey pubKey) {
+        checkArgument(pubKey.isCompressed(), () ->
+                "only compressed keys allowed");
+        List<byte[]> pushes = new ArrayList<>(2);
+        pushes.add(signature != null ? signature.encodeToBitcoin() : new byte[0]); // signature
+        pushes.add(pubKey.getPubKey()); // pubkey , witness的第2个位置
+        return TransactionWitness.of(pushes);
+    }
+```
+
+有了公钥，就可以根据账户和网络类型算出对应的地址。
+
+```
+byte[] publicKeyBytes = input.getWitness().getPush(1); // 第二个位置，下标为1，存放的的是pubKey
+// 创建一个 ECKey 对象并导入公钥
+ECKey ecKey = ECKey.fromPublicOnly(publicKeyBytes);
+
+// 将 ECKey 对象转换为 Bitcoin 地址
+Address from = ecKey.toAddress(ScriptType.P2WPKH, network); // 如果是测试网络，请改为 TestNetParams.get()
+```
+
+### 3.获取输出地址和金额
+
+遍历所有输出，通过转出地址筛选出我们所关心的输出，类似输入，地址可以从输出脚本解析得到，输出金额直接从output获取到。
+
+```
+List<TransactionOutput> outputs = tx.getOutputs();
+for (TransactionOutput output : outputs) {
+     Script pubKey = output.getScriptPubKey();
+     Address to = pubKey.getToAddress(network);
+     if ("tb1qeww9d68r9xyka203zpzmwmwc94rp8sqfgekhwn".equals(to.toString())) {
+          System.out.printf("from:%s to:%s receive: %s\n", from, to, output.getValue().toFriendlyString());
+     }
+}
+```
+
+### 4.综合运行
+
+将上面逻辑整合起来，运行examples/src/main/java/org.bitcoinj.examples/FetchBlock.java
+
+```
+gradle -PmainClass=org.bitcoinj.examples.FetchBlock run --args=000000009661aeca0d6092068575fe5113455fe2d28d200d367c57829686f6e9
+```
+
+输出如下：
+
+```
+16:29:40.246 28 PeerGroup.handleNewPeer: Peer{[18.162.45.10]:18333, version=70016, subVer=/Satoshi:0.21.0/, services=NETWORK, WITNESS, NETWORK_LIMITED, time=2024-03-15T16:29:40Z, height=2582085}: New peer      (10 connected, 2 pending, 12 max)
+tx: Transaction{910e4fa1e07a192a33986dc45c6857ff33391cabe0ff87e733fda7ea0f71379e, wtxid d69b107bdc9079022593bd9964315fef07fba08d2789648d98bbdf8c0b94fe7f
+weight: 561 wu, 141 virtual bytes, 222 bytes
+purpose: UNKNOWN
+   in   <empty>
+        witness:304402201f1559071f66bf9c41de50a2c0797330a1a3877bf7ee26f039e10b7153379d12022000da463d0bd87a9b75369bc4b6713e2bceb4553d05870d86b5a846b428d7f4b701 026b7ba89cb3249b8afe1d9bac77dadd178e995f258cb809f34ec03d1bc62999cd
+        unconnected  outpoint:df2b71b76cfc6ae8f2142204a2460b348d438f5f2a05f61b57b3239ee20cc5b4:0
+   out  0[] PUSHDATA(20)[8252a735bc09ac9604356407b9e67528f4af6298]  0.00003845 BTC
+        P2WPKH
+   out  0[] PUSHDATA(20)[cb9c56e8e329896ea9f11045b76dd82d4613c009]  0.00001 BTC
+        P2WPKH
+}
+from:tb1q7cp7xg0wdm9r46uwckagj8al3p9p6gcggmvyec to:tb1qeww9d68r9xyka203zpzmwmwc94rp8sqfgekhwn receive: 0.00001 BTC
+```
+
+可以看到接收来自tb1q7cp7xg0wdm9r46uwckagj8al3p9p6gcggmvyec，发送到tb1qeww9d68r9xyka203zpzmwmwc94rp8sqfgekhwn，一共0.00001 BTC的转账信息。
+
+{% hint style="info" %}
+关于交易的结构信息，请参考《第六章：交易》。
+{% endhint %}
