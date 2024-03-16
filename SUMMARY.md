@@ -292,6 +292,12 @@
   * [状态通道 - 基本概念和术语](di-shi-si-zhang-.-er-ceng-ying-yong/zhi-fu-tong-dao-he-zhuang-tai-tong-dao/zhuang-tai-tong-dao-ji-ben-gai-nian-he-shu-yu.md)
   * [简单支付通道示例](di-shi-si-zhang-.-er-ceng-ying-yong/zhi-fu-tong-dao-he-zhuang-tai-tong-dao/jian-dan-zhi-fu-tong-dao-shi-li.md)
   * [创建无需信任的通道](di-shi-si-zhang-.-er-ceng-ying-yong/zhi-fu-tong-dao-he-zhuang-tai-tong-dao/chuang-jian-wu-xu-xin-ren-de-tong-dao.md)
+  * [非对称撤销承诺](di-shi-si-zhang-.-er-ceng-ying-yong/zhi-fu-tong-dao-he-zhuang-tai-tong-dao/fei-dui-cheng-che-xiao-cheng-nuo.md)
+  * [哈希时间锁合约（Hash Time Lock Contracts -HTLC）](di-shi-si-zhang-.-er-ceng-ying-yong/zhi-fu-tong-dao-he-zhuang-tai-tong-dao/ha-xi-shi-jian-suo-he-yue-hash-time-lock-contracts-htlc.md)
+* [路由支付通道（闪电网络）](di-shi-si-zhang-.-er-ceng-ying-yong/lu-you-zhi-fu-tong-dao-shan-dian-wang-luo/README.md)
+  * [基本闪电网络示例](di-shi-si-zhang-.-er-ceng-ying-yong/lu-you-zhi-fu-tong-dao-shan-dian-wang-luo/ji-ben-shan-dian-wang-luo-shi-li.md)
+  * [闪电网络传输和路径查找](di-shi-si-zhang-.-er-ceng-ying-yong/lu-you-zhi-fu-tong-dao-shan-dian-wang-luo/shan-dian-wang-luo-chuan-shu-he-lu-jing-cha-zhao.md)
+  * [闪电网络的好处](di-shi-si-zhang-.-er-ceng-ying-yong/lu-you-zhi-fu-tong-dao-shan-dian-wang-luo/shan-dian-wang-luo-de-hao-chu.md)
 
 ## 附录A. 比特币白皮书（by中本聪）
 
@@ -310,9 +316,3 @@
 * [Icons](fu-lu-c.-bi-te-bi-gai-jin-jian-yi/icons.md)
 * [Buttons](fu-lu-c.-bi-te-bi-gai-jin-jian-yi/buttons.md)
 * [Inputs](fu-lu-c.-bi-te-bi-gai-jin-jian-yi/inputs.md)
-
-## 索引
-
-* [Icons](suo-yin/icons.md)
-* [Buttons](suo-yin/buttons.md)
-* [Inputs](suo-yin/inputs.md)
