@@ -299,20 +299,23 @@
   * [闪电网络传输和路径查找](di-shi-si-zhang-.-er-ceng-ying-yong/lu-you-zhi-fu-tong-dao-shan-dian-wang-luo/shan-dian-wang-luo-chuan-shu-he-lu-jing-cha-zhao.md)
   * [闪电网络的好处](di-shi-si-zhang-.-er-ceng-ying-yong/lu-you-zhi-fu-tong-dao-shan-dian-wang-luo/shan-dian-wang-luo-de-hao-chu.md)
 
-## 附录A. 比特币白皮书（by中本聪）
+## 附录A. 比特币白皮书（by中本聪）翻译
 
-* [Icons](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong/icons.md)
-* [Buttons](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong/buttons.md)
-* [Inputs](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong/inputs.md)
+* [比特币 - 一种点对点的电子现金系统](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong-fan-yi/bi-te-bi-yi-zhong-dian-dui-dian-de-dian-zi-xian-jin-xi-tong/README.md)
+  * [介绍](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong-fan-yi/bi-te-bi-yi-zhong-dian-dui-dian-de-dian-zi-xian-jin-xi-tong/jie-shao.md)
+  * [交易](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong-fan-yi/bi-te-bi-yi-zhong-dian-dui-dian-de-dian-zi-xian-jin-xi-tong/jiao-yi.md)
+  * [时间戳服务器](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong-fan-yi/bi-te-bi-yi-zhong-dian-dui-dian-de-dian-zi-xian-jin-xi-tong/shi-jian-chuo-fu-wu-qi.md)
+  * [工作量证明(PoW)](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong-fan-yi/bi-te-bi-yi-zhong-dian-dui-dian-de-dian-zi-xian-jin-xi-tong/gong-zuo-liang-zheng-ming-pow.md)
+  * [网络](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong-fan-yi/bi-te-bi-yi-zhong-dian-dui-dian-de-dian-zi-xian-jin-xi-tong/wang-luo.md)
+  * [激励](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong-fan-yi/bi-te-bi-yi-zhong-dian-dui-dian-de-dian-zi-xian-jin-xi-tong/ji-li.md)
+  * [回收磁盘空间](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong-fan-yi/bi-te-bi-yi-zhong-dian-dui-dian-de-dian-zi-xian-jin-xi-tong/hui-shou-ci-pan-kong-jian.md)
+  * [简化支付验证（Simplified Payment Verification，SPV）](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong-fan-yi/bi-te-bi-yi-zhong-dian-dui-dian-de-dian-zi-xian-jin-xi-tong/jian-hua-zhi-fu-yan-zheng-simplified-payment-verificationspv.md)
+  * [合并和拆分价值](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong-fan-yi/bi-te-bi-yi-zhong-dian-dui-dian-de-dian-zi-xian-jin-xi-tong/he-bing-he-chai-fen-jia-zhi.md)
+  * [隐私](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong-fan-yi/bi-te-bi-yi-zhong-dian-dui-dian-de-dian-zi-xian-jin-xi-tong/yin-si.md)
+  * [计算](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong-fan-yi/bi-te-bi-yi-zhong-dian-dui-dian-de-dian-zi-xian-jin-xi-tong/ji-suan.md)
+  * [结论](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong-fan-yi/bi-te-bi-yi-zhong-dian-dui-dian-de-dian-zi-xian-jin-xi-tong/jie-lun.md)
+  * [引用](fu-lu-a.-bi-te-bi-bai-pi-shu-by-zhong-ben-cong-fan-yi/bi-te-bi-yi-zhong-dian-dui-dian-de-dian-zi-xian-jin-xi-tong/yin-yong.md)
 
-## 附录B. 比特币白皮书勘误表
+## 附录B. 比特币改进建议(Bitcoin Improvement Proposals,BIP)
 
-* [Icons](fu-lu-b.-bi-te-bi-bai-pi-shu-kan-wu-biao/icons.md)
-* [Buttons](fu-lu-b.-bi-te-bi-bai-pi-shu-kan-wu-biao/buttons.md)
-* [Inputs](fu-lu-b.-bi-te-bi-bai-pi-shu-kan-wu-biao/inputs.md)
-
-## 附录C. 比特币改进建议
-
-* [Icons](fu-lu-c.-bi-te-bi-gai-jin-jian-yi/icons.md)
-* [Buttons](fu-lu-c.-bi-te-bi-gai-jin-jian-yi/buttons.md)
-* [Inputs](fu-lu-c.-bi-te-bi-gai-jin-jian-yi/inputs.md)
+* [综合介绍](fu-lu-b.-bi-te-bi-gai-jin-jian-yi-bitcoin-improvement-proposalsbip/zong-he-jie-shao.md)
