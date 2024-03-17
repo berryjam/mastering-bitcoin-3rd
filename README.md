@@ -43,9 +43,36 @@ coverY: 0
 ## Collaborators
 
 <!-- readme: collaborators -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/berryjam">
+            <img src="https://avatars.githubusercontent.com/u/2264019?v=4" width="100;" alt="berryjam"/>
+            <br />
+            <sub><b>Berryjam</b></sub>
+        </a>
+    </td></tr>
+</table>
 <!-- readme: collaborators -end -->
 
 ## Contributors
 
 <!-- readme: contributors -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/berryjam">
+            <img src="https://avatars.githubusercontent.com/u/2264019?v=4" width="100;" alt="berryjam"/>
+            <br />
+            <sub><b>Berryjam</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/eth2the-moon">
+            <img src="https://avatars.githubusercontent.com/u/33979506?v=4" width="100;" alt="eth2the-moon"/>
+            <br />
+            <sub><b>Irrrrr2</b></sub>
+        </a>
+    </td></tr>
+</table>
 <!-- readme: contributors -end -->
