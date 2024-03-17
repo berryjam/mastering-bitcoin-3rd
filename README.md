@@ -40,21 +40,6 @@ coverY: 0
 
 [Amazon](https://www.amazon.com/Mastering-Bitcoin-Programming-Open-Blockchain/dp/1098150090)
 
-## Collaborators
-
-<!-- readme: collaborators -start -->
-<table>
-<tr>
-    <td align="center">
-        <a href="https://github.com/berryjam">
-            <img src="https://avatars.githubusercontent.com/u/2264019?v=4" width="100;" alt="berryjam"/>
-            <br />
-            <sub><b>Berryjam</b></sub>
-        </a>
-    </td></tr>
-</table>
-<!-- readme: collaborators -end -->
-
 ## Contributors
 
 <!-- readme: contributors -start -->
