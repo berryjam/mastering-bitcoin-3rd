@@ -8,6 +8,7 @@
 
 这里，我们使用git命令创建源代码的本地副本（“克隆”）：
 
+```shell
 $git clone https://github.com/bitcoin/bitcoin.git&#x20;
 
 Cloning into 'bitcoin'...&#x20;
@@ -23,6 +24,7 @@ remote: Total 245912 (delta 1), reused 2 (delta 1), pack-reused 245909
 Receiving objects: 100% (245912/245912), 217.74 MiB | 13.05 MiB/s, done.&#x20;
 
 Resolving deltas: 100% (175649/175649), done.
+```
 
 {% hint style="info" %}
 Git是最广泛使用的分布式版本控制系统，是任何软件开发人员工具包的必备部分。如果您尚未安装git命令或Git的图形用户界面，则可能需要在您的操作系统上安装它。
