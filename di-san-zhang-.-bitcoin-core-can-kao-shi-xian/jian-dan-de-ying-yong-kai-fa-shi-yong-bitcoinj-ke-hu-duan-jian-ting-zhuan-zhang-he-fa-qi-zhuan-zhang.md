@@ -302,3 +302,105 @@ from:tb1q7cp7xg0wdm9r46uwckagj8al3p9p6gcggmvyec to:tb1qeww9d68r9xyka203zpzmwmwc9
 {% hint style="info" %}
 关于交易的结构信息，请参考《第六章：交易》。
 {% endhint %}
+
+## 使用单独部署的测试全节点
+
+> 由于上述例子使用的测试网公开的节点进行同步区块信息，这些公开节点可能会请求进行限频等，导致交易监听和转账出现问题。因此建议在本地部署一个测试网全节点，专用的节点获取交易信息和处理效率都很会非常高。
+
+
+
+### 1.下载bitcoin core
+
+根据运行操作系统选择合适的版本：[https://bitcoincore.org/en/download/](https://bitcoincore.org/en/download/)
+
+```
+$cd ~/download
+$wget https://bitcoincore.org/bin/bitcoin-core-26.0/bitcoin-26.0-x86_64-linux-gnu.tar.gz
+```
+
+### 2.解压和设置
+
+```
+$tar -xvf bitcoin-26.0-x86_64-linux-gnu.tar.gz
+$export PATH=$PATH:/root/download/bitcoin-26.0/bin
+```
+
+正常情况下，能够识别节点bitcoind和命令行工具bitcoin-cli
+
+```
+$which bitcoind
+/root/download/bitcoin-26.0/bin/bitcoind
+$which bitcoin-cli
+/root/download/bitcoin-26.0/bin/bitcoin-cli
+```
+
+### 3.配置运行参数
+
+接着就可以配置运行参数文件
+
+```
+$mkdir -p /data/bitcoin
+$touch /data/bitcoin/bitcoin.conf
+```
+
+大致参数如下，由于用的测试网，所以只配置了\[test]。其中datadir为存储区块交易的数据目录，`txindex` 是一个用于控制是否启用事务索引的参数。如果设置为 `1`，则表示启用事务索引，允许通过事务哈希来快速查找交易的详细信息，建议开启，不过会更占用磁盘空间。peerbloomfilters=1，表示允许开启布隆过滤器，**bitcoinj项目这个参数必须设置为1，否则会拉取不到数据**。
+
+```
+# Options for mainnet
+[main]
+
+# Options for testnet
+[test]
+datadir=/data/bitcoin/testnet/data
+#prune=51200
+shrinkdebuglog=1
+rpcuser=berry
+rpcpassword=123456
+txindex=1
+peerbloomfilters=1
+
+# Options for signet
+[signet]
+
+# Options for regtest
+[regtest]
+```
+
+### 4.运行bitcoind和确认
+
+指定运行配置文件、网络和后台运行
+
+```
+$bitcoind --conf=/data/bitcoin/bitcoin.conf -testnet -daemon
+```
+
+第一次启动时，节点需要同步最新的区块数据，需要等待一会。正常情况下，通过bitcoin-cli就能查询到上述的交易信息
+
+```
+$bitcoin-cli -testnet -rpcuser=berry -rpcpassword=123456 getrawtransaction 910e4fa1e07a192a33986dc45c6857ff33391cabe0ff87e733fda7ea0f71379e
+01000000000101b4c50ce29e23b3571bf6052a5f8f438d340b46a2042214f2e86afc6cb7712bdf0000000000ffffffff02050f0000000000001600148252a735bc09ac9604356407b9e67528f4af6298e803000000000000160014cb9c56e8e329896ea9f11045b76dd82d4613c0090247304402201f1559071f66bf9c41de50a2c0797330a1a3877bf7ee26f039e10b7153379d12022000da463d0bd87a9b75369bc4b6713e2bceb4553d05870d86b5a846b428d7f4b70121026b7ba89cb3249b8afe1d9bac77dadd178e995f258cb809f34ec03d1bc62999cd00000000
+```
+
+### 5.代码设置Peer为本地节点
+
+测试节点的P2P默认端口为18333，RPC端口为18332，正式网分别为8333、8332。
+
+```java
+WalletAppKit kit = WalletAppKit.launch(network, new File("."), "walletappkit-example", (k) -> {
+            // In case you want to connect with your local bitcoind tell the kit to connect to localhost.
+            // This is done automatically in reg test mode.
+            // k.connectToLocalHost();
+            try {
+                k.setPeerNodes(PeerAddress.simple(InetAddress.getByName("127.0.0.1"), 18333)); // 设置本地连接Peer节点
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+            }
+        });
+```
+
+正常情况下，使用本地全节点能避免很多问题。
+
+
+
+
+
