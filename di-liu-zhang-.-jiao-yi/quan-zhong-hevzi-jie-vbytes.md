@@ -28,3 +28,6 @@ Alice在本章开头的示例6-1中的交易以权重单位表示如图6-6所示
 
 <figure><img src="../.gitbook/assets/6.6.png" alt=""><figcaption><p>图 6-6.  Alice交易的字节映射</p></figcaption></figure>
 
+
+
+比特币权重详细介绍可参见：[比特币权重维基百科](https://en.bitcoin.it/wiki/Weight\_units)。
