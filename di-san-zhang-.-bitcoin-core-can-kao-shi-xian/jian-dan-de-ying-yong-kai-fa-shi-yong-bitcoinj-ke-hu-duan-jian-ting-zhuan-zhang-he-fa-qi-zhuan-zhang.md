@@ -400,7 +400,55 @@ WalletAppKit kit = WalletAppKit.launch(network, new File("."), "walletappkit-exa
 
 正常情况下，使用本地全节点能避免很多问题。
 
+## bitcoinj常见问题
 
+当出现以下加载钱包异常：
 
+```
+Exception in thread "main" java.lang.IllegalStateException: Expected the service WalletAppKit [FAILED] to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:384)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:308)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:160)
+	at org.bitcoinj.kits.WalletAppKit.launch(WalletAppKit.java:220)
+	at org.bitcoinj.kits.WalletAppKit.launch(WalletAppKit.java:178)
+	at org.bitcoinj.examples.Kit.main(Kit.java:57)
+Caused by: org.bitcoinj.wallet.UnreadableWalletException: Could not parse input stream to protobuf
+	at org.bitcoinj.wallet.WalletProtobufSerializer.readWallet(WalletProtobufSerializer.java:455)
+	at org.bitcoinj.wallet.Wallet.loadFromFileStream(Wallet.java:2076)
+	at org.bitcoinj.wallet.Wallet.loadFromFile(Wallet.java:1961)
+	at org.bitcoinj.kits.WalletAppKit.loadWallet(WalletAppKit.java:508)
+	at org.bitcoinj.kits.WalletAppKit.createOrLoadWallet(WalletAppKit.java:480)
+	at org.bitcoinj.kits.WalletAppKit.startUp(WalletAppKit.java:399)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService.lambda$doStart$0(AbstractIdleService.java:64)
+	at com.google.common.util.concurrent.Callables.lambda$threadRenaming$3(Callables.java:105)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.IllegalStateException: You must construct a Context object before using bitcoinj!
+	at org.bitcoinj.core.Context.get(Context.java:124)
+	at org.bitcoinj.core.Transaction.getConfidence(Transaction.java:1586)
+	at org.bitcoinj.wallet.WalletProtobufSerializer.connectTransactionOutputs(WalletProtobufSerializer.java:771)
+	at org.bitcoinj.wallet.WalletProtobufSerializer.readWallet(WalletProtobufSerializer.java:551)
+	at org.bitcoinj.wallet.WalletProtobufSerializer.readWallet(WalletProtobufSerializer.java:453)
+	... 8 more
+```
 
+需要在钱包加载(WalletAppKit.launch)前，设置:Context.propagate(new Context());  如下所示：
+
+```
+        BitcoinNetwork network = BitcoinNetwork.TESTNET;
+        Context.propagate(new Context()); // 这里必须要设置，否则会出现加载钱包错误
+
+        // Initialize and start a WalletAppKit. The kit handles all the boilerplate for us and is the easiest way to get everything up and running.
+        // Look at the WalletAppKit documentation and its source to understand what's happening behind the scenes: https://github.com/bitcoinj/bitcoinj/blob/master/core/src/main/java/org/bitcoinj/kits/WalletAppKit.java
+        // WalletAppKit extends the Guava AbstractIdleService. Have a look at the introduction to Guava services: https://github.com/google/guava/wiki/ServiceExplained
+        WalletAppKit kit = WalletAppKit.launch(network, new File("."), "walletappkit-example", (k) -> {
+            // In case you want to connect with your local bitcoind tell the kit to connect to localhost.
+            // This is done automatically in reg test mode.
+            // k.connectToLocalHost();
+            try {
+                k.setPeerNodes(PeerAddress.simple(InetAddress.getByName("127.0.0.1"), 18333));
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+            }
+        });
+```
 
