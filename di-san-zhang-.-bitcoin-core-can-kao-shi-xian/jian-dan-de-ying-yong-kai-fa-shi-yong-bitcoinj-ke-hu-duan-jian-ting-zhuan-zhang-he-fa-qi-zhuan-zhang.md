@@ -402,11 +402,10 @@ WalletAppKit kit = WalletAppKit.launch(network, new File("."), "walletappkit-exa
 
 ## bitcoinj常见问题
 
-当出现以下加载钱包异常：
+### 1.钱包加载异常
 
-```
-Exception in thread "main" java.lang.IllegalStateException: Expected the service WalletAppKit [FAILED] to be RUNNING, but the service has FAILED
-	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:384)
+<pre><code><strong>Exception in thread "main" java.lang.IllegalStateException: Expected the service WalletAppKit [FAILED] to be RUNNING, but the service has FAILED
+</strong>	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:384)
 	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:308)
 	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:160)
 	at org.bitcoinj.kits.WalletAppKit.launch(WalletAppKit.java:220)
@@ -429,9 +428,9 @@ Caused by: java.lang.IllegalStateException: You must construct a Context object 
 	at org.bitcoinj.wallet.WalletProtobufSerializer.readWallet(WalletProtobufSerializer.java:551)
 	at org.bitcoinj.wallet.WalletProtobufSerializer.readWallet(WalletProtobufSerializer.java:453)
 	... 8 more
-```
+</code></pre>
 
-需要在钱包加载(WalletAppKit.launch)前，设置:Context.propagate(new Context());  如下所示：
+当出现以上异常时，需要在钱包加载(WalletAppKit.launch)前，设置:Context.propagate(new Context());  如下所示：
 
 ```
         BitcoinNetwork network = BitcoinNetwork.TESTNET;
@@ -452,3 +451,24 @@ Caused by: java.lang.IllegalStateException: You must construct a Context object 
         });
 ```
 
+
+
+### 2.节点连接异常
+
+```
+WARN  [NioClientManager] [o.b.n.ConnectionHandler](ConnectionHandler.java:251) Error handling SelectionKey: java.nio.channels.CancelledKeyException 
+java.nio.channels.CancelledKeyException: null
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.readyOps(SelectionKeyImpl.java:87)
+	at java.nio.channels.SelectionKey.isWritable(SelectionKey.java:312)
+	at org.bitcoinj.net.ConnectionHandler.handleKey(ConnectionHandler.java:245)
+	at org.bitcoinj.net.NioClientManager.handleKey(NioClientManager.java:97)
+	at org.bitcoinj.net.NioClientManager.run(NioClientManager.java:133)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1.lambda$doStart$1(AbstractExecutionThreadService.java:57)
+	at com.google.common.util.concurrent.Callables.lambda$threadRenaming$3(Callables.java:105)
+	at org.bitcoinj.utils.ContextPropagatingThreadFactory.lambda$newThread$0(ContextPropagatingThreadFactory.java:49)
+	at java.lang.Thread.run(Thread.java:750)
+2024-03-21 09:56:53.609 INFO  [PeerGroup Thread] [o.b.c.PeerGroup](PeerGroup.java:639) Waiting 1500 ms before next connect attempt to [127.0.0.1]:18333
+```
+
+这种情况，一般是因为默认选用了测试网的公开节点，请求被限频。可以参考上面部署单个节点来解决，但必须设置_**peerbloomfilters=1，**_bitcoinj只能连接支持bloom filter的节点_**。**_
