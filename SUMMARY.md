@@ -198,6 +198,7 @@
 ## 第十章. 比特币网络
 
 * [综合介绍](di-shi-zhang-.-bi-te-bi-wang-luo/zong-he-jie-shao.md)
+* [节点类型和任务](di-shi-zhang-.-bi-te-bi-wang-luo/jie-dian-lei-xing-he-ren-wu.md)
 * [网络](di-shi-zhang-.-bi-te-bi-wang-luo/wang-luo.md)
 * [紧凑块传输](di-shi-zhang-.-bi-te-bi-wang-luo/jin-cou-kuai-chuan-shu.md)
 * [私有区块传输网络](di-shi-zhang-.-bi-te-bi-wang-luo/page-1.md)
