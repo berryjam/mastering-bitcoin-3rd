@@ -13,7 +13,7 @@
 
 您可以在几乎任何区块浏览器网站上搜索该区块哈希，比如blockstream.info，您会找到一个页面描述该区块的内容，其中包含该哈希的URL链接。
 
-{% embed url="https://blockstream.info/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f" %}
+[https://blockstream.info/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f](https://blockstream.info/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f)
 
 或者，您可以在命令行上使用Bitcoin Core获取该区块：
 
