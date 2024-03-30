@@ -9,7 +9,11 @@ coverY: 0
 
 ## 精通比特币第三版翻译
 
-[https://berryjam.gitbook.io/mastering-bitcoin-3rd](https://berryjam.gitbook.io/mastering-bitcoin-3rd)
+网页版：[https://berryjam.gitbook.io/mastering-bitcoin-3rd](https://berryjam.gitbook.io/mastering-bitcoin-3rd)
+
+pdf版：[https://berryjam.github.io/mastering-bitcoin-3rd/book.pdf](https://berryjam.github.io/mastering-bitcoin-3rd/book.pdf)
+
+epub版：[https://berryjam.github.io/mastering-bitcoin-3rd/book.epub](https://berryjam.github.io/mastering-bitcoin-3rd/book.epub)
 
 ## 译者介绍
 
@@ -42,22 +46,5 @@ coverY: 0
 
 ## Contributors
 
-<!-- readme: contributors -start -->
-<table>
-<tr>
-    <td align="center">
-        <a href="https://github.com/berryjam">
-            <img src="https://avatars.githubusercontent.com/u/2264019?v=4" width="100;" alt="berryjam"/>
-            <br />
-            <sub><b>Berryjam</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/eth2the-moon">
-            <img src="https://avatars.githubusercontent.com/u/33979506?v=4" width="100;" alt="eth2the-moon"/>
-            <br />
-            <sub><b>Irrrrr2</b></sub>
-        </a>
-    </td></tr>
-</table>
-<!-- readme: contributors -end -->
+| <p><a href="https://github.com/berryjam"><img src="https://avatars.githubusercontent.com/u/2264019?v=4" alt="berryjam"><br>Berryjam</a></p> | <p><a href="https://github.com/eth2the-moon"><img src="https://avatars.githubusercontent.com/u/33979506?v=4" alt="eth2the-moon"><br>Irrrrr2</a></p> |
+| :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------: |
