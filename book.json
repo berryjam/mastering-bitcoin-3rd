@@ -1,0 +1,5 @@
+{
+    "plugins": [
+        "alert-msg","hints","url-embed"
+    ]
+}
