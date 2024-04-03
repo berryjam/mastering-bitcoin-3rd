@@ -5,7 +5,7 @@
 
 每个节点始终以至少一个区块的区块链开始，因为创世区块被静态编码在比特币核心中，因此无法更改。每个节点始终“知道”创世区块的哈希和结构，以及创建的固定时间，甚至包括其中的单个交易。因此，每个节点都有一个区块链的起点，一个安全的“根”，用于构建一个可信的区块链。
 
-在Bitcoin Core客户端的chainparams.cpp中，可以看到静态编码的创世区块。
+在Bitcoin Core客户端的[chainparams.cpp](https://github.com/bitcoin/bitcoin/blob/3955c3940eff83518c186facfec6f50545b5aab5/src/chainparams.cpp#L123)中，可以看到静态编码的创世区块。
 
 以下标识哈希属于创世区块：
 
