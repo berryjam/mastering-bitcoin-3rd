@@ -230,7 +230,7 @@
 * [默克尔树](di-shi-yi-zhang-.-qu-kuai-lian/mo-ke-er-shu.md)
 * [Merkle 树与轻量级客户端](di-shi-yi-zhang-.-qu-kuai-lian/merkle-shu-yu-qing-liang-ji-ke-hu-duan.md)
 * [比特币的测试区块链](di-shi-yi-zhang-.-qu-kuai-lian/bi-te-bi-de-ce-shi-qu-kuai-lian/README.md)
-  * [测试网：比特币的测试场地](di-shi-yi-zhang-.-qu-kuai-lian/bi-te-bi-de-ce-shi-qu-kuai-lian/ce-shi-wang-bi-te-bi-de-ce-shi-chang-di.md)
+  * [Testnet：比特币的测试场地](di-shi-yi-zhang-.-qu-kuai-lian/bi-te-bi-de-ce-shi-qu-kuai-lian/ce-shi-wang-bi-te-bi-de-ce-shi-chang-di.md)
   * [Signet：权威测试网络](di-shi-yi-zhang-.-qu-kuai-lian/bi-te-bi-de-ce-shi-qu-kuai-lian/signet-quan-wei-ce-shi-wang-luo.md)
   * [Regtest：本地区块链](di-shi-yi-zhang-.-qu-kuai-lian/bi-te-bi-de-ce-shi-qu-kuai-lian/regtest-ben-di-qu-kuai-lian.md)
 * [使用测试区块链进行开发](di-shi-yi-zhang-.-qu-kuai-lian/shi-yong-ce-shi-qu-kuai-lian-jin-hang-kai-fa.md)
