@@ -343,7 +343,7 @@ $mkdir -p /data/bitcoin
 $touch /data/bitcoin/bitcoin.conf
 ```
 
-大致参数如下，由于用的测试网，所以只配置了\[test]。其中datadir为存储区块交易的数据目录，`txindex` 是一个用于控制是否启用事务索引的参数。如果设置为 `1`，则表示启用事务索引，允许通过事务哈希来快速查找交易的详细信息，建议开启，不过会更占用磁盘空间。peerbloomfilters=1，表示允许开启布隆过滤器，**bitcoinj项目这个参数必须设置为1，否则会拉取不到数据**。
+大致参数如下，由于用的测试网，所以只配置了\[test]。其中datadir为存储区块交易的数据目录，`txindex` 是一个用于控制是否启用事务索引的参数。如果设置为 `1`，则表示启用事务索引，允许通过事务哈希来快速查找交易的详细信息，建议开启，不过会更占用磁盘空间。peerbloomfilters=1，表示允许开启布隆过滤器，**bitcoinj项目这个参数必须设置为1，否则会拉取不到数据**。rpcallowip=0.0.0.0/0设置为允许所有机器能够连接，rpcbind=0.0.0.0设置监听来自所有ip的连接，**默认为127.0.0.1，会导致远程机器连接不上**。
 
 ```
 # Options for mainnet
@@ -356,6 +356,8 @@ datadir=/data/bitcoin/testnet/data
 shrinkdebuglog=1
 rpcuser=berry
 rpcpassword=123456
+rpcallowip=0.0.0.0/0
+rpcbind=0.0.0.0
 txindex=1
 peerbloomfilters=1
 
