@@ -67,7 +67,8 @@
   * [Scala](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bu-tong-yu-yan-ke-hu-duan-ku-he-gong-ju-bao/scala.md)
   * [C#](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bu-tong-yu-yan-ke-hu-duan-ku-he-gong-ju-bao/c.md)
   * [总结](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/bu-tong-yu-yan-ke-hu-duan-ku-he-gong-ju-bao/zong-jie.md)
-* [简单的应用开发：使用bitcoinj客户端监听转账，和发起转账](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/jian-dan-de-ying-yong-kai-fa-shi-yong-bitcoinj-ke-hu-duan-jian-ting-zhuan-zhang-he-fa-qi-zhuan-zhang.md)
+* [简单的应用开发(一)：使用bitcoinj客户端监听转账，和发起转账](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/jian-dan-de-ying-yong-kai-fa-shi-yong-bitcoinj-ke-hu-duan-jian-ting-zhuan-zhang-he-fa-qi-zhuan-zhang.md)
+* [简单的应用开发(二)：使用rust与BRC-20交互](di-san-zhang-.-bitcoin-core-can-kao-shi-xian/jian-dan-de-ying-yong-kai-fa-er-shi-yong-rust-yu-brc20-jiao-hu.md)
 
 ## 第四章. 密钥和地址
 
@@ -289,6 +290,7 @@
   * [客户端验证](di-shi-si-zhang-.-er-ceng-ying-yong/cai-se-bi/ke-hu-duan-yan-zheng.md)
   * [RGB](di-shi-si-zhang-.-er-ceng-ying-yong/cai-se-bi/rgb.md)
   * [Taproot资产](di-shi-si-zhang-.-er-ceng-ying-yong/cai-se-bi/taproot-zi-chan.md)
+* [BRC-20交易指南](di-shi-si-zhang-.-er-ceng-ying-yong/brc20-jiao-yi-zhi-nan.md)
 * [支付通道和状态通道](di-shi-si-zhang-.-er-ceng-ying-yong/zhi-fu-tong-dao-he-zhuang-tai-tong-dao/README.md)
   * [状态通道 - 基本概念和术语](di-shi-si-zhang-.-er-ceng-ying-yong/zhi-fu-tong-dao-he-zhuang-tai-tong-dao/zhuang-tai-tong-dao-ji-ben-gai-nian-he-shu-yu.md)
   * [简单支付通道示例](di-shi-si-zhang-.-er-ceng-ying-yong/zhi-fu-tong-dao-he-zhuang-tai-tong-dao/jian-dan-zhi-fu-tong-dao-shi-li.md)
