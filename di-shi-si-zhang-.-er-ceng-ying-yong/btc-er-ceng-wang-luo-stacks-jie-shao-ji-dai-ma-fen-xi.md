@@ -563,15 +563,262 @@ Note. 奖励周期的目标持续时间约为2周。这一持续时间基于比�
 
 ### 4.4 Stacks节点代码分析
 
-
+Stacks使用sqlite对主链、子链数据进行存储，节点启动的入口代码为**testnet/stacks-node/src/main.rs**的main函数，会开启主线程main thread，由主线程再启动其他子线程，线程间使用channel进行通讯协作。
 
 下面是Stacks节点的整体架构图：
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Stacks节点整体架构图</p></figcaption></figure>
 
+#### 4.4.1 主线程
 
+1.创建burnchain\_controller；
 
+2.创建chains\_coordinator；
 
+3.创建StacksNode线程；
 
+#### 4.4.2 burnchain\_controller
 
+负责同步主链（burnchain）状态。主要做3件事：1.1 download 同步主链的区块；1.2 parse 解析主链区块里的stacks相关交易 1.3 db 将解析的stacks交易存储到本地数据库。
+
+其中每接受到主链的块信息，a.1 announce\_new\_burn\_block：会通知chains\_coordinator进行处理。
+
+#### 4.4.3 chains\_coordinator
+
+负责协调microblocks的生成和确认，以及被anchor blocks安全引用。
+
+&#x20;a.2 handle\_new\_burnchain\_block：接收到新的主链区块事件并处理。
+
+&#x20;b.6 handle\_new\_stacks\_block: 接收到新的子链区块事件并处理。
+
+#### 4.4.4 StacksNode
+
+1.创建relayer线程；
+
+2.创建p2p线程；
+
+#### 4.4.4.1 relayer
+
+1.创建miner线程：
+
+miner负责子链的出块和执行具体的交易逻辑，处理流程：
+
+* b.1 mine\_block:  按照块的大小及mempool里交易的手续费进行选择包含在当前microblock里的交易并执行；
+* b.2 propose\_block:  将mined block发送到所监听的Signer；
+* b.3 coordinate\_signature:  获取Signer的聚合签名，只有得到当前reward cycle内70%以上的Signer签名才会被认为有效；
+* b.4 broadcast： 广播区块信息；
+* b.5 announce\_new\_stacks\_block: 通知chains\_coordinator新的子链区块信息。
+
+2.自身会处理4种指令：
+
+* HandleNetResult: 接收来自p2p线程的网络请求处理结果，比如接收到新的交易，会写入到mempool。
+* RegisterKey：会维护节点miner私钥的状态机，是否已注册、激活、停止。因为要成为miner，首先要先注册到当前的tenure里。
+* ProcessedBurnBlock：处理接收到的主链区块信息，如判断当前miner是否已经成功竞选为当前任期内的miner。
+* IssueBlockCommit:  向主链提交anchor block，会构造特殊的比特币交易，vout向选中的两个Stacker发送btc。构造实现如下：
+
+```rust
+fn send_block_commit_operation(
+        &mut self,
+        epoch_id: StacksEpochId,
+        payload: LeaderBlockCommitOp,
+        signer: &mut BurnchainOpSigner,
+        utxos_to_include: Option<UTXOSet>,
+        utxos_to_exclude: Option<UTXOSet>,
+        previous_fees: Option<LeaderBlockCommitFees>,
+        previous_txids: &Vec<Txid>,
+    ) -> Option<Transaction> {
+        let mut estimated_fees = match previous_fees {
+            Some(fees) => fees.fees_from_previous_tx(&payload, &self.config),
+            None => LeaderBlockCommitFees::estimated_fees_from_payload(&payload, &self.config),
+        };
+
+        let _ = self.sortdb_mut();
+        let burn_chain_tip = self.burnchain_db.as_ref()?.get_canonical_chain_tip().ok()?;
+
+        let public_key = signer.get_public_key();
+        let (mut tx, mut utxos) = self.prepare_tx(
+            epoch_id,
+            &public_key,
+            estimated_fees.estimated_amount_required(),
+            utxos_to_include,
+            utxos_to_exclude,
+            burn_chain_tip.block_height,
+        )?;
+
+        // Serialize the payload
+        let op_bytes = {
+            let mut buffer = vec![];
+            let mut magic_bytes = self.magic_bytes();
+            buffer.append(&mut magic_bytes);
+            payload
+                .consensus_serialize(&mut buffer)
+                .expect("FATAL: invalid operation");
+            buffer
+        };
+
+        let consensus_output = TxOut {
+            value: estimated_fees.sunset_fee,
+            script_pubkey: Builder::new()
+                .push_opcode(opcodes::All::OP_RETURN)
+                .push_slice(&op_bytes)
+                .into_script(),
+        };
+
+        tx.output = vec![consensus_output];
+
+        for commit_to in payload.commit_outs.iter() {
+            tx.output
+                .push(commit_to.to_bitcoin_tx_out(estimated_fees.amount_per_output()));
+        }
+
+        let fee_rate = estimated_fees.fee_rate;
+        self.finalize_tx(
+            epoch_id,
+            &mut tx,
+            estimated_fees.total_spent_in_outputs(),
+            estimated_fees.spent_in_attempts,
+            estimated_fees.min_tx_size(),
+            fee_rate,
+            &mut utxos,
+            signer,
+        )?;
+
+        let serialized_tx = SerializedTx::new(tx.clone());
+
+        let tx_size = serialized_tx.bytes.len() as u64;
+        estimated_fees.register_replacement(tx_size);
+        let mut txid = tx.txid().as_bytes().to_vec();
+        txid.reverse();
+
+        debug!("Transaction relying on UTXOs: {:?}", utxos);
+        let txid = Txid::from_bytes(&txid[..]).unwrap();
+        let mut txids = previous_txids.clone();
+        txids.push(txid.clone());
+        let ongoing_block_commit = OngoingBlockCommit {
+            payload,
+            utxos,
+            fees: estimated_fees,
+            txids,
+        };
+
+        info!(
+            "Miner node: submitting leader_block_commit (txid: {}, rbf: {}, total spent: {}, size: {}, fee_rate: {})",
+            txid.to_hex(),
+            ongoing_block_commit.fees.is_rbf_enabled,
+            ongoing_block_commit.fees.total_spent(),
+            ongoing_block_commit.fees.final_size,
+            fee_rate,
+        );
+
+        self.ongoing_block_commit = Some(ongoing_block_commit);
+
+        increment_btc_ops_sent_counter();
+
+        Some(tx)
+    }
+```
+
+{% hint style="info" %}
+在 Stacks 区块链中，LeaderBlockCommit 交易是一种特殊的交易类型，用于将 Stacks 区块锚定到比特币区块链上。通过这种机制，Stacks 利用比特币的安全性，使得 Stacks 区块链的状态可以通过比特币交易进行验证。
+
+#### LeaderBlockCommit 对应的比特币脚本
+
+LeaderBlockCommit 交易通常包含以下组件：
+
+1. **OP\_RETURN 输出**：这个输出用于在比特币区块链上存储数据。这种方式不需要实际花费比特币，使用 OP\_RETURN 输出可以存储最多 80 字节的任意数据。
+2. **承诺数据（Commitment Data）**：嵌入在 OP\_RETURN 输出中的数据包括有关被提交的 Stacks 区块的信息。这些数据按照特定规则格式化，使 Stacks 网络能够解释。
+
+#### 脚本的详细分解
+
+1. **OP\_RETURN 操作码**：用于标记输出为携带数据的输出，而不是价值。这用于在比特币交易中嵌入任意数据。
+2. **承诺数据**：紧随 OP\_RETURN 操作码之后嵌入承诺数据。这些数据通常包括：
+   * **版本字节**：一个字节，指示承诺格式的版本。
+   * **区块高度**：所提交的 Stacks 区块的高度。
+   * **父区块哈希**：父 Stacks 区块的哈希。
+   * **公钥哈希**：提交区块的领导者的公钥哈希。
+   * **VRF 证明**：用于领导者选举过程的可验证随机函数（VRF）的证明。
+   * **默克尔根**：所提交的 Stacks 区块中交易的默克尔根。
+
+#### LeaderBlockCommit 脚本示例
+
+以下是一个 LeaderBlockCommit 交易脚本的示例：
+
+```plaintext
+plaintext复制代码OP_RETURN <commitment_data>
+```
+
+其中，`<commitment_data>` 是各种组件（版本字节、区块高度、父区块哈希等）的连接。
+
+#### LeaderBlockCommit 的意义
+
+1. **安全性**：通过将 Stacks 区块锚定到比特币区块链，Stacks 继承了比特币的安全性。这使得攻击者难以在不更改比特币区块链的情况下篡改 Stacks 区块链。
+2. **可验证性**：任何人都可以通过查看相应的比特币交易来验证 Stacks 区块链的状态。这使得 Stacks 区块链透明且可验证。
+3. **去中心化**：通过利用比特币的去中心化网络，Stacks 增强了自身的去中心化和抗审查能力。
+{% endhint %}
+
+#### 4.4.4.2 p2p
+
+1.创建http loop线程：负责接收来自client的请求，比如转账、调用合约、质押stx等交易。
+
+2.创建p2p loop线程：处理client发送的请求，及节点间的通讯，并将网络处理结果通知relayer：process\_network\_result。
+
+#### 4.4.4.2 Signer
+
+Signer是一个关键组件，负责处理节点间的共识和数据验证。
+
+用户通过client构造调用系统合约pox4的交易，将Signer的btc地址及子链私钥、公钥、地址注册到系统合约上。
+
+使用注册的密钥信息启动Signer后，会不断**保持节点的运行状态和同步**、**更新分布式密钥（DKG）**信息，和**持续接收所监听的Stacks节点事件并进行处理**。
+
+```
+fn run_one_pass(
+        &mut self,
+        event: Option<SignerEvent>,
+        cmd: Option<RunLoopCommand>,
+        res: Sender<Vec<OperationResult>>,
+    ) -> Option<Vec<OperationResult>> {
+        // ...
+        // 1.保持节点的运行状态和同步
+        if self.state == State::Uninitialized {
+            if let Err(e) = self.initialize_runloop() { 
+                error!("Failed to initialize signer runloop: {e}.");
+                if let Some(event) = event {
+                    warn!("Ignoring event: {event:?}");
+                }
+                return None;
+            }
+        } else if let Some(SignerEvent::NewBurnBlock(current_burn_block_height)) = event {
+            if let Err(e) = self.refresh_runloop(current_burn_block_height) {
+                error!("Failed to refresh signer runloop: {e}.");
+                warn!("Signer may have an outdated view of the network.");
+            }
+        }
+        // ...
+        for signer in self.stacks_signers.values_mut() {
+            // ...
+            // 更新DKG信息
+            if signer.approved_aggregate_public_key.is_none() {
+                if let Err(e) = retry_with_exponential_backoff(|| {
+                    signer
+                        .update_dkg(&self.stacks_client, current_reward_cycle)
+                        .map_err(backoff::Error::transient)
+                }) {
+                    error!("{signer}: failed to update DKG: {e}");
+                }
+            }
+            signer.refresh_coordinator();
+            // 持续接收所监听的Stacks节点事件并进行处理，如验证区块信息和签名
+            if let Err(e) = signer.process_event(
+                &self.stacks_client,
+                event.as_ref(),
+                res.clone(),
+                current_reward_cycle,
+            ) {
+                error!("{signer}: errored processing event: {e}");
+            }
+            // ...
+        }
+        None
+    }
+```
 
