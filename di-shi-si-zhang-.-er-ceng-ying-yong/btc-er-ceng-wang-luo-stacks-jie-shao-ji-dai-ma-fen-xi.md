@@ -2,7 +2,7 @@
 
 随着2024年初BTC的大热，各种BTC二层网络如雨后春笋般出现。在个人博客里[《BTC Layer2的3种方案（转载+翻译）》](https://berryjam.github.io/2024/02/\(%E8%BD%AC%E8%BD%BD+%E7%BF%BB%E8%AF%91\)BTC-Layer2%E6%96%B9%E6%A1%88%E6%B1%87%E6%80%BB/)，对当前火热的三个项目：**B²、Merlin、BEVM**进行了初步介绍**。**其中B²、BEVM实现原理是类似ethereum的ZK-Rollup的扩容方案，但局限于比特币脚本并不是图灵完备，实现上挑战还是比较高的。而Merlin是基于质押BTC的方式，质押节点是由Merlin指定的，不够去中心化。
 
-接下来要介绍的Stacks与Merlin类似，也是基于质押的方式，但是任何人都能成为Stacker，实现去中心化。并且通过“链锚定”的方式，利用BTC主链的**PoW**来保护Stacks子链的安全性，同时引入microblock、anchorblock机制来实现交易的快速确认，以此实现扩容。
+接下来要介绍的Stacks与Merlin类似，也是基于质押的方式，但是任何人都能成为Stacker，创新性地引入新的共识算法**PoX**实现去中心化。并且通过“链锚定”的方式，利用BTC主链的**PoW**来保护Stacks子链的安全性，同时引入microblock、anchorblock机制来实现交易的快速确认，以此实现扩容。
 
 下面将对如何启动Stacks、Stacker节点和代码进行具体介绍。还有对整体架构以及其中不同组件：区块生成、交易处理、共识机制、与比特币交互、Clarity智能合约进行分析。
 
@@ -511,13 +511,63 @@ $curl -sL localhost:20443/v2/pox | jq
 }
 ```
 
-这时候等网络达到reward cycle 1的时候再重启signer（**因为mocknet模式下不支持推送burnchain block，无法主动刷新注册信息**），就能看到以下输出：
+这时候等网络达到reward cycle 1的时候再重启signer（**因为mocknet模式下不支持推送burnchain block，无法主动刷新注册信息，故需要重启**），就能看到以下输出：
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>signer日志输出，已经注册到reward cycle 1</p></figcaption></figure>
 
 ## 4.整体架构及代码分析
 
 
+
+### 4.1 整体机制
+
+Stacks网络主要由2类节点组成，分别是miner和signer。其中miner负责参与竞选出块，而signer负责验证块的内容和签名，只有达到70%以上的signer同意，miner出的块才会被接受。如下图所示：signer通过质押stx成为stacker，获取btc奖励。而miner通过发送btc，获取coinbase和交易手续费奖励(stx形式)。以此将btc与stx代币经济模型形成闭环。
+
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>miner、stacker关系</p></figcaption></figure>
+
+### 4.2 Miner流程：
+
+<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+
+1.发送RegisterKey交易到主链（btc），注册成为miner。
+
+2.发送LeaderBlockCommit交易到主链（btc），里面会使用VRF从当前reward cycle里选中两个stacker进行发送btc，从而参与竞选。
+
+3.由VRF选出任期内的miner，这里每一个btc块是一个单独的任期，miner也可以进行连任。miner由Verifiable Random Function（VRF）根据发送btc数量占当期总发送量为概率进行抽签选中。同样，接收btc奖励的stackers也是由VRF每次选择其中2个作为接收方。
+
+4.被VRF选中的miner负责出microblocks，这个阶段执行交易出块会非常块，因为不需要进行锚定和共识，当满足出anchor block的条件时，会将多个microblocks串联成一个anchor block并锚定到主链（btc）上。间接利用主链的工作量证明来保护子链的安全，因为要篡改子链的区块，需要改写btc主链的区块，这个需要的计算量非常巨大。
+
+
+
+### 4.3 Stacker流程
+
+<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+
+1.调用API获取有关即将到来的奖励周期的详细信息
+
+2.对于特定的Stacks账户，确认其符合条件
+
+3.确认比特币奖励地址和锁定期限
+
+4.交易已广播，STX代币已被锁定。这需要在下一个奖励周期的准备阶段之前完成，即正在进行的奖励阶段的最后100个比特币块
+
+5.stacking机制执行奖励周期，并向设置的BTC奖励地址发送奖励
+
+6.在锁定期间，可以获取有关解锁时间、奖励等的详细信息
+
+7.一旦锁定期结束，代币将被释放并再次可访问
+
+8.显示奖励历史，包括以前奖励周期的收益等详细信
+
+Note. 奖励周期的目标持续时间约为2周。这一持续时间基于比特币网络的目标块时间（10分钟），有时可能会因比特币网络的确认时间差异而增加。
+
+### 4.4 Stacks节点代码分析
+
+
+
+下面是Stacks节点的整体架构图：
+
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>stacks整体架构</p></figcaption></figure>
 
 
 
