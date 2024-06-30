@@ -27,7 +27,7 @@ epub版：[https://berryjam.github.io/mastering-bitcoin-3rd/book.epub](https://b
 
 另外除了翻译之外，本学习内容会加入一些从技术角度理解的注释，如第4章介绍私钥和公钥时，可能看完就会很快忘记其形式是怎么样，两者如何转换而来。私钥k本质上是一个256比特的大数，而公钥K是椭圆曲线的一个点坐标，通过K=k\*G转换而来。那么怎么从大数转为二维(x,y)公钥呢？通过k次椭圆曲线的“加法”操作（切线与曲线相交点的x轴对称点），而G是生成点坐标，通过这就实现了转换。这样加上一些备注，会更方便记忆。
 
-由于很多开发者接触区块链是从以太坊开始的，以太坊开发生态比较完善，实现诸如“拉块”和发起转账和调用智能合约的例子网上也比较多，开发者很容易上手。但是比特币应用开发例子比较少，要实现“拉块”和发起转账就不是那么直观了。所以在原作基础上，第三章加入了《简单的应用开发（一）：使用bitcoinj客户端监听转账，和发起转账》，使用Java客户端实现了一个监听转账和发起转账的demo：[https://github.com/berryjam/bitcoinj](https://github.com/berryjam/bitcoinj) 。考虑到2023年以来BRC-20资产的火热，在第十四章加入了《BRC-20交易指南》的翻译，以及在第三章加入《简单的应用开发（二）：使用rust与BRC-20交互》，demo：[https://github.com/berryjam/ordhook](https://github.com/berryjam/ordhook) ，期望能够抛砖引玉。
+由于很多开发者接触区块链是从以太坊开始的，以太坊开发生态比较完善，实现诸如“拉块”和发起转账和调用智能合约的例子网上也比较多，开发者很容易上手。但是比特币应用开发例子比较少，要实现“拉块”和发起转账就不是那么直观了。所以在原作基础上，第三章加入了《简单的应用开发（一）：使用bitcoinj客户端监听转账，和发起转账》，使用Java客户端实现了一个监听转账和发起转账的demo：[https://github.com/berryjam/bitcoinj](https://github.com/berryjam/bitcoinj) 。考虑到2023年以来BRC-20资产的火热，在第十四章加入了《BRC-20交易指南》的翻译，以及在第三章加入《简单的应用开发（二）：使用rust与BRC-20交互》，demo：[https://github.com/berryjam/ordhook](https://github.com/berryjam/ordhook) 。还有2024年初BTC大热，BTC的各种二层方案层出不穷，在第十四章加入《BTC二层网络Stacks介绍及代码分析》，与大家深入了解基于去中心化质押的BTC二层方案，期望能够抛砖引玉。
 
 因此希望本翻译内容能够为大家带来更新的比特币学习内容和一些技术上的思考。
 
@@ -46,36 +46,5 @@ epub版：[https://berryjam.github.io/mastering-bitcoin-3rd/book.epub](https://b
 
 ## Contributors
 
-<!-- readme: contributors -start -->
-<table>
-<tr>
-    <td align="center">
-        <a href="https://github.com/berryjam">
-            <img src="https://avatars.githubusercontent.com/u/2264019?v=4" width="100;" alt="berryjam"/>
-            <br />
-            <sub><b>Berryjam</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/PinelliaC">
-            <img src="https://avatars.githubusercontent.com/u/35207295?v=4" width="100;" alt="PinelliaC"/>
-            <br />
-            <sub><b>Null</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/0xzkm">
-            <img src="https://avatars.githubusercontent.com/u/140362509?v=4" width="100;" alt="0xzkm"/>
-            <br />
-            <sub><b>0xbe</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/eth2the-moon">
-            <img src="https://avatars.githubusercontent.com/u/33979506?v=4" width="100;" alt="eth2the-moon"/>
-            <br />
-            <sub><b>Irrrrr2</b></sub>
-        </a>
-    </td></tr>
-</table>
-<!-- readme: contributors -end -->
+| <p><a href="https://github.com/berryjam"><img src="https://avatars.githubusercontent.com/u/2264019?v=4" alt="berryjam"><br>Berryjam</a></p> | <p><a href="https://github.com/PinelliaC"><img src="https://avatars.githubusercontent.com/u/35207295?v=4" alt="PinelliaC"><br>Null</a></p> | <p><a href="https://github.com/0xzkm"><img src="https://avatars.githubusercontent.com/u/140362509?v=4" alt="0xzkm"><br>0xbe</a></p> | <p><a href="https://github.com/eth2the-moon"><img src="https://avatars.githubusercontent.com/u/33979506?v=4" alt="eth2the-moon"><br>Irrrrr2</a></p> |
+| :-----------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------: |
