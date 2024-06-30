@@ -301,6 +301,7 @@
   * [基本闪电网络示例](di-shi-si-zhang-.-er-ceng-ying-yong/lu-you-zhi-fu-tong-dao-shan-dian-wang-luo/ji-ben-shan-dian-wang-luo-shi-li.md)
   * [闪电网络传输和路径查找](di-shi-si-zhang-.-er-ceng-ying-yong/lu-you-zhi-fu-tong-dao-shan-dian-wang-luo/shan-dian-wang-luo-chuan-shu-he-lu-jing-cha-zhao.md)
   * [闪电网络的好处](di-shi-si-zhang-.-er-ceng-ying-yong/lu-you-zhi-fu-tong-dao-shan-dian-wang-luo/shan-dian-wang-luo-de-hao-chu.md)
+* [BTC二层网络Stacks介绍及代码分析](di-shi-si-zhang-.-er-ceng-ying-yong/btc-er-ceng-wang-luo-stacks-jie-shao-ji-dai-ma-fen-xi.md)
 
 ## 附录A. 比特币白皮书（by中本聪）翻译
 
