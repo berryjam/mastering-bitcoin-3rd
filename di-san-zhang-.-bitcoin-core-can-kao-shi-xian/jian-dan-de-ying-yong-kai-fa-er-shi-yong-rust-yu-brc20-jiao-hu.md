@@ -6,7 +6,7 @@
 
 [ord-rs](https://github.com/bitfinity-network/ord-rs)：这个项目支持构建BRC-20交易，包括部署、铸造和发送BRC-20。但是这个项目缺少了indexer，不支持BRC-20交易的解析。另外这个项目缺少完整钱包功能（缺少UTXO历史和coin selector），在构建BRC-20交易的时候，需要显式指定可用的UTXO，而账户可用的UTXO列表可以通过上一节的WalletTool导出，然后手动选择能够覆盖交易手续费的一笔或者多笔交易即可。由于这个项目手续费的计算是固定的，至少为0.000102 （2500+4700+3000=10200聪，1BTC=10^8 聪）BTC，所以测试时候需要多准备些测试BTC。
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>固定手续费</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>固定手续费</p></figcaption></figure>
 
 [ordhook](https://github.com/berryjam/ordhook)：由于上面ord-rs缺少indexer，所以需要这个项目来解析链上的BRC-20交易，但是项目本身还有一些配置，直接运行还会下载一些预处理数据，缺少reveal交易的打印信息，在原来的基础修改了这些：[https://github.com/berryjam/ordhook](https://github.com/berryjam/ordhook)。
 
@@ -32,7 +32,7 @@ gradle -PmainClass=org.bitcoinj.wallettool.WalletTool run --args='dump --chain /
 
 这里会显示多个账户，是因为我们使用的HD派生钱包，对于钱包来说，这些账户的UTXO都可以使用。以账户tb1q2uhd28nklz63xj2u6j78l6902ehsmjl3d75q5e为例，下面为对应的私钥，而WIF(Wallet Import Format)格式是Base58编码后的格式，可读性更好。这里由于ord-rs限制了只能使用WIF格式的私钥，这里我们选择后面那个priv WIF。
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>图 3.9 账户UTXO列表</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>图 3.9 账户UTXO列表</p></figcaption></figure>
 
 可以看到这里有几笔交易信息，其中第1笔可用资金相对比较多，为0.0002 BTC，output有两个，其中out为0的接受地址为我们的账户：tb1q2uhd28nklz63xj2u6j78l6902ehsmjl3d75q5e，这里可以用作部署BRC-20交易。另外一笔由于是一笔找零output，账户是其他用户的，所以不能使用。
 
