@@ -513,7 +513,7 @@ $curl -sL localhost:20443/v2/pox | jq
 
 这时候等网络达到reward cycle 1的时候再重启signer（**因为mocknet模式下不支持推送burnchain block，无法主动刷新注册信息，故需要重启**），就能看到以下输出：
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>signer日志输出，已经注册到reward cycle 1</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>signer日志输出，已经注册到reward cycle 1</p></figcaption></figure>
 
 ## 4.整体架构及代码分析
 
@@ -567,7 +567,9 @@ Note. 奖励周期的目标持续时间约为2周。这一持续时间基于比�
 
 下面是Stacks节点的整体架构图：
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>stacks整体架构</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Stacks节点整体架构图</p></figcaption></figure>
+
+
 
 
 
