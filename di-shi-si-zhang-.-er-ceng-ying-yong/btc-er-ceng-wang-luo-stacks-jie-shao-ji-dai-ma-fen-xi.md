@@ -664,9 +664,9 @@ fn send_block_commit_operation(
                 .into_script(),
         };
 
-        tx.output = vec![consensus_output];
+        tx.output = vec![consensus_output]; // 用于共识数据output
 
-        for commit_to in payload.commit_outs.iter() {
+        for commit_to in payload.commit_outs.iter() { // 这里为两个被选中stacker对应TxOut，value为转账数量，script_pubkey为基于stacker的地址类似所构造的脚本
             tx.output
                 .push(commit_to.to_bitcoin_tx_out(estimated_fees.amount_per_output()));
         }
@@ -744,7 +744,7 @@ LeaderBlockCommit 交易通常包含以下组件：
 以下是一个 LeaderBlockCommit 交易脚本的示例：
 
 ```plaintext
-plaintext复制代码OP_RETURN <commitment_data>
+OP_RETURN <commitment_data>
 ```
 
 其中，`<commitment_data>` 是各种组件（版本字节、区块高度、父区块哈希等）的连接。
