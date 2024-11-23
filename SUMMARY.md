@@ -252,7 +252,7 @@
   * [工作量证明算法(PoW)](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-jue-qu-kuai/gong-zuo-liang-zheng-ming-suan-fa-pow.md)
   * [目标表示](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-jue-qu-kuai/mu-biao-biao-shi.md)
   * [调整难度的重新定位](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-jue-qu-kuai/tiao-zheng-nan-du-de-zhong-xin-ding-wei.md)
-  * [使用cpuminer进行实际挖矿](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-jue-qu-kuai/tiao-zheng-nan-du-de-zhong-xin-ding-wei-1.md)
+  * [使用cpuminer进行挖矿](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/wa-jue-qu-kuai/tiao-zheng-nan-du-de-zhong-xin-ding-wei-1.md)
 * [中位时间过去（Median-Time-Past, MPT）](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/zhong-wei-shi-jian-guo-qu-mediantimepast-mpt.md)
 * [成功挖掘区块](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/cheng-gong-wa-jue-qu-kuai.md)
 * [验证新区块](di-shi-er-zhang-.-wa-kuang-he-gong-shi-suan-fa/yan-zheng-xin-qu-kuai.md)
