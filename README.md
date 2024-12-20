@@ -44,7 +44,5 @@ epub版：[https://berryjam.github.io/mastering-bitcoin-3rd/book.epub](https://b
 
 [Amazon](https://www.amazon.com/Mastering-Bitcoin-Programming-Open-Blockchain/dp/1098150090)
 
-## Contributors
-
-| <p><a href="https://github.com/berryjam"><img src="https://avatars.githubusercontent.com/u/2264019?v=4" alt="berryjam"><br>Berryjam</a></p> | <p><a href="https://github.com/PinelliaC"><img src="https://avatars.githubusercontent.com/u/35207295?v=4" alt="PinelliaC"><br>Null</a></p> | <p><a href="https://github.com/0xzkm"><img src="https://avatars.githubusercontent.com/u/140362509?v=4" alt="0xzkm"><br>0xbe</a></p> | <p><a href="https://github.com/eth2the-moon"><img src="https://avatars.githubusercontent.com/u/33979506?v=4" alt="eth2the-moon"><br>Irrrrr2</a></p> |
-| :-----------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------: |
+<!-- readme: contributors -start -->
+<!-- readme: contributors -end -->
