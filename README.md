@@ -15,13 +15,7 @@ pdf版：[https://berryjam.github.io/mastering-bitcoin-3rd/book.pdf](https://ber
 
 epub版：[https://berryjam.github.io/mastering-bitcoin-3rd/book.epub](https://berryjam.github.io/mastering-bitcoin-3rd/book.epub)
 
-## 译者介绍
-
-区块链领域从业者
-
-个人编写的区块链相关博客：[https://berryjam.github.io/](https://berryjam.github.io/)
-
-个人github：[https://github.com/berryjam](https://github.com/berryjam)
+## 介绍
 
 精通比特币第三版于2023年12月发布，距离2017年发布的第二版过去6年。期间比特币又增加了很多新特性，和实现了不少新的改进提案。如2018年提出的升级提案Taproot，用来增强比特币的可扩展性、隐私性和灵活性，并成为构建BTC 2层重要特性和带来了BRC-20资产。
 
