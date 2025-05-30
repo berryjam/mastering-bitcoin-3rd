@@ -1,0 +1,8 @@
+% graphics-maxwidth.tex
+% 让所有图片最大宽度不超过页面内容宽度，等比缩放
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\let\Oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{\Oldincludegraphics[width=\maxwidth,#1]{#2}}
+\makeatother

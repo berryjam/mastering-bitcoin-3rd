@@ -1,0 +1,116 @@
+name: Pandoc
+
+on:
+  push:
+    tags:
+      - "v*" # 仅在推送 v 开头的标签时触发
+  workflow_dispatch: # 允许手动触发
+
+# 设置 GITHUB_TOKEN 的权限，允许创建 Release 和写入内容
+permissions:
+  contents: write # 需要写入权限来创建/上传 Release 附件
+
+jobs:
+  build_and_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取完整的 git 历史
+
+      - name: Get latest commit info
+        id: git
+        run: |
+          echo "message=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
+          echo "sha=$(git log -1 --pretty=%H)" >> $GITHUB_OUTPUT
+
+      - name: Install Dependencies (LaTeX, Pandoc, CJK Fonts)
+        run: |
+          sudo apt-get update
+          echo "Installing TeX Live, Pandoc, and Noto CJK Fonts. This may take a while..."
+          sudo apt-get install -y --no-install-recommends \
+            texlive-xetex \
+            texlive-lang-chinese \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-luatex \
+            texlive-science \
+            texlive-pictures \
+            texlive-plain-generic \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-fonts-extra \
+            texlive-lang-english \
+            fonts-noto-cjk \
+            fonts-noto \
+            fonts-noto-core \
+            fonts-noto-extra \
+            fonts-noto-ui-core \
+            fonts-noto-ui-extra \
+            pandoc
+          echo "Installation complete."
+
+      - name: Create output directory
+        run: mkdir -p ./release_pdfs
+
+      - name: Download eisvogel LaTeX template
+        run: |
+          wget https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v3.2.0/Eisvogel-3.2.0.tar.gz -O Eisvogel-3.2.0.tar.gz
+          tar -xzf Eisvogel-3.2.0.tar.gz Eisvogel-3.2.0/eisvogel.latex --strip-components=1
+
+      - name: Convert GitBook syntax to Pandoc-friendly Markdown
+        run: |
+          find . -name '*.md' | while read file; do
+            python3 $GITHUB_WORKSPACE/.github/workflows/pandoc-assets/pandoc-gitbook-preprocess.py < "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+          done
+
+      - name: Set wider table column spacing for LaTeX
+        run: echo '\setlength{\tabcolsep}{10pt}' > table-space.tex
+
+      - name: Convert Markdown to PDF
+        run: |
+          echo "Starting PDF conversion..."
+          # 创建临时文件来存储文件列表
+          echo "Creating ordered file list from SUMMARY.md..."
+          grep -o '\[.*\](.*\.md)' SUMMARY.md | sed 's/\[.*\](//g' | sed 's/)$//g' > ordered_files.txt
+
+          # 创建输出目录
+          mkdir -p ./release_pdfs
+
+          # 合并所有 MD 文件为一个 PDF 文件，按 SUMMARY.md 顺序
+          echo "Converting all Markdown files to ./release_pdfs/mastering-bitcoin-3rd.pdf"
+          pandoc $(cat ordered_files.txt) -o ./release_pdfs/mastering-bitcoin-3rd.pdf \
+            --template eisvogel.latex \
+            -f markdown+pipe_tables-raw_tex \
+            --pdf-engine=xelatex \
+            --toc \
+            --toc-depth=3 \
+            -V CJKmainfont="Noto Sans CJK SC" \
+            --variable verbatim-in-note=true \
+            -V book=true \
+            -V toc-own-page=true \
+            -V header-left="精通比特币" \
+            -V header-right="第三版" \
+            -V footer-center="\\href{https://github.com/${{ github.repository }}}{${{ github.repository }}}" \
+            --include-in-header=table-space.tex \
+            --include-in-header=$GITHUB_WORKSPACE/.github/workflows/pandoc-assets/graphics-maxwidth.tex \
+            # -V watermark="仅供学习交流" \
+          echo "PDF conversion finished."
+
+      - name: Upload PDF to Release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./release_pdfs/*.pdf
+          tag: "${{ github.workflow }}-${{ github.ref_name }}"
+          overwrite: true # 如果已存在同名文件，则覆盖
+          file_glob: true # 启用通配符匹配
+          release_name: "精通比特币第三版-${{ github.ref_name }}"
+          body: |
+            PDF 版本：${{ github.workflow }}-${{ github.ref_name }}
+            构建用户：${{ github.actor }}
+            最近修改：[${{ steps.git.outputs.message }}](https://github.com/${{ github.repository }}/commit/${{ steps.git.outputs.sha }})

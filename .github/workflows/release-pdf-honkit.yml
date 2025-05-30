@@ -1,0 +1,73 @@
+name: HonKit
+
+on:
+  push:
+    tags:
+      - "v*" # 仅在推送 v 开头的标签时触发
+  workflow_dispatch: # 允许手动触发
+
+permissions:
+  contents: write # 需要写入权限来创建/上传 Release 附件
+
+jobs:
+  build_and_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取完整的 git 历史
+
+      - name: Get latest commit info
+        id: git
+        run: |
+          echo "message=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
+          echo "sha=$(git log -1 --pretty=%H)" >> $GITHUB_OUTPUT
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install HonKit and plugins locally
+        run: |
+          npm init -y
+          npm install honkit
+          npm install honkit-plugin-alert-msg
+          npm install gitbook-plugin-hints
+          npm install gitbook-plugin-url-embed
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            calibre \
+            fonts-noto-cjk \
+            fonts-noto \
+            fonts-noto-core \
+            fonts-noto-extra \
+            fonts-noto-ui-core \
+            fonts-noto-ui-extra
+
+      - name: Create output directory
+        run: mkdir -p ./release_pdfs
+
+      - name: Build PDF with HonKit
+        run: |
+          echo "Starting PDF conversion with HonKit..."
+          npx honkit pdf ./ ./release_pdfs/mastering-bitcoin-3rd.pdf
+          echo "PDF conversion finished."
+
+      - name: Upload PDF to Release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./release_pdfs/*.pdf
+          tag: "${{ github.workflow }}-${{ github.ref_name }}"
+          overwrite: true # 如果已存在同名文件，则覆盖
+          file_glob: true # 启用通配符匹配
+          release_name: "精通比特币第三版-${{ github.ref_name }}"
+          body: |
+            PDF 版本：${{ github.workflow }}-${{ github.ref_name }}
+            构建用户：${{ github.actor }}
+            最近修改：[${{ steps.git.outputs.message }}](https://github.com/${{ github.repository }}/commit/${{ steps.git.outputs.sha }}) 
