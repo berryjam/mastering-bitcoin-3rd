@@ -9,7 +9,7 @@ coverY: 0
 
 ## 精通比特币第三版翻译
 
-网页版：[https://berryjam.gitbook.io/mastering-bitcoin-3rd](https://berryjam.gitbook.io/mastering-bitcoin-3rd)  (最新)
+网页版：[https://berryjam.gitbook.io/mastering-bitcoin-3rd](https://berryjam.gitbook.io/mastering-bitcoin-3rd)  (已失效，有需求的请使用pdf生成插件在本地生成进行阅读)
 
 pdf版：[https://berryjam.github.io/mastering-bitcoin-3rd/book.pdf](https://berryjam.github.io/mastering-bitcoin-3rd/book.pdf) （暂停更新）
 
