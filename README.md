@@ -49,8 +49,8 @@ epub版：[https://berryjam.github.io/mastering-bitcoin-3rd/book.epub](https://b
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/PinelliaC">
-            <img src="https://avatars.githubusercontent.com/u/35207295?v=4" width="100;" alt="PinelliaC"/>
+        <a href="https://github.com/RealiCZ">
+            <img src="https://avatars.githubusercontent.com/u/35207295?v=4" width="100;" alt="RealiCZ"/>
             <br />
             <sub><b>Null</b></sub>
         </a>
